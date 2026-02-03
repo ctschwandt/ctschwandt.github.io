@@ -1,16 +1,16 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Cole Schwandt",
+    "email": "ctschwandt1@cougars.ccis.edu",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://ctschwandt.github.io/",
+    "summary": "Computer Science & Mathematics undergraduate at Columbia College",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
+      "city": "Columbia",
       "countryCode": "US",
-      "region": ""
+      "region": "Missouri"
     },
     "profiles": [
       {
@@ -25,8 +25,8 @@
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "ctschwandt",
+        "url": "https://github.com/ctschwandt"
       }
     ]
   },
