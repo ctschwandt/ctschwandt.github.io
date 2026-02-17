@@ -1,0 +1,73 @@
+/* ==========================================================================
+   AIR THEME - DARK VERSION (Black & Gold Elegance)
+   Palette:
+   Black         : #000000
+   Prussian Blue : #14213D
+   Orange/Gold   : #FCA311
+   Alabaster Grey: #E5E5E5
+   White         : #FFFFFF
+   ========================================================================== */
+
+/* Primary Accent (Gold/Orange) */
+$primary-color              : #FCA311;  /* Orange/Gold */
+$dark-primary-color         : mix(#000, $primary-color, 40%);
+$darker-primary-color       : mix(#000, $primary-color, 60%);
+$light-primary-color        : mix(#fff, $primary-color, 25%);
+
+/* Background System */
+$background                 : #000000;  /* Black */
+$background-light           : #14213D;  /* Prussian Blue panels */
+$background-lighter         : mix(#fff, $background-light, 85%);
+$text                       : #E5E5E5;  /* Alabaster Grey */
+
+/* Links */
+$link                       : mix($primary-color, $text, 55%);
+$link-dark                  : mix(#000, $link, 25%);
+$link-light                 : mix(#fff, $link, 20%);
+
+/* Footer */
+$footer                     : mix(#000, $background, 30%);
+
+/* Semantic Colors (kept harmonious with palette) */
+$danger-color               : #D62828;   /* deep red */
+$info-color                 : #14213D;   /* Prussian Blue */
+$notice-color               : #E5E5E5;   /* Alabaster Grey */
+$success-color              : #2A9D8F;   /* muted teal */
+$warning-color              : #FCA311;   /* Orange/Gold */
+
+/* Other basic settings for the template */
+$border-radius              : 4px;
+$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Dark theme for the site */
+html[data-theme="dark"] {
+  --global-base-color                 : #{$primary-color};
+  --global-bg-color                   : #{$background};
+  --global-footer-bg-color            : #{$footer};
+  --global-border-color               : #{$primary-color};
+  --global-dark-border-color          : #{$background-light};
+
+  /* Code blocks (dark theme should not be pure white) */
+  --global-code-background-color      : #{$background-light};
+  --global-code-text-color            : #FFFFFF;
+
+  --global-fig-caption-color          : #{$text};
+
+  --global-link-color                 : #{$link};
+  --global-link-color-hover           : #{$primary-color};
+  --global-link-color-visited         : #{$link-light};
+
+  --global-masthead-link-color        : #{$text};
+  --global-masthead-link-color-hover  : #{$primary-color};
+
+  --global-text-color                 : #{$text};
+  --global-text-color-light           : #FFFFFF;
+
+  --global-thead-color                : #{$background-lighter};
+}

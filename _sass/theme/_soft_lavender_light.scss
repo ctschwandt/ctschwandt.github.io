@@ -1,0 +1,58 @@
+/* ==========================================================================
+   SOFT LAVENDER THEME - LIGHT VERSION
+   ========================================================================== */
+
+/* Color codes used for the theme */
+$primary-color              : #4A4E69;  /* Dusty Grape as accent on light */
+$dark-primary-color         : mix(#000, $primary-color, 30%);
+$darker-primary-color       : mix(#000, $primary-color, 55%);
+$light-primary-color        : mix(#fff, $primary-color, 20%);
+
+$background                 : #F2E9E4;  /* Seashell */
+$background-light           : #FFF;     /* panels */
+$background-lighter         : #FFF;
+$text                       : #22223B;  /* Space Indigo */
+
+$link                       : mix(#22223B, $primary-color, 35%);
+$link-dark                  : mix(#000, $link, 25%);
+$link-light                 : mix(#fff, $link, 15%);
+$footer                     : mix(#000, $background, 10%);
+
+/* Color codes used for the site */
+$danger-color               : #E63946;
+$info-color                 : #457B9D;
+$notice-color               : #7A8288;
+$success-color              : #2A9D8F;
+$warning-color              : #F4A261;
+
+/* Other basic settings for the template */
+$border-radius              : 6px;
+$box-shadow                 : 0 2px 8px rgba(0, 0, 0, 0.12);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Light theme for the site */
+html[data-theme="light"] {
+  --global-base-color                 : #{$primary-color};
+  --global-bg-color                   : #{$background};
+  --global-footer-bg-color            : #{$footer};
+  --global-border-color               : #{$light-primary-color};
+  --global-dark-border-color          : #{$background};
+
+  --global-code-background-color      : #fafafa;
+  --global-code-text-color            : #{$darker-primary-color};
+
+  --global-fig-caption-color          : #{$dark-primary-color};
+  --global-link-color                 : #{$link};
+  --global-link-color-hover           : #{$link-dark};
+  --global-link-color-visited         : #{$link-light};
+  --global-masthead-link-color        : #{$text};
+  --global-masthead-link-color-hover  : #{$primary-color};
+  --global-text-color                 : #{$text};
+  --global-text-color-light           : #{$dark-primary-color};
+  --global-thead-color                : #{$background};
+}
