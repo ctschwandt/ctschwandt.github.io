@@ -1,33 +1,43 @@
 /* ==========================================================================
-   SOFT LAVENDER THEME - LIGHT VERSION
+   SOFT LAVENDER THEME - DARK VERSION
+   Palette:
+   Space Indigo  : #22223B
+   Dusty Grape   : #4A4E69
+   Lilac Ash     : #9A8C98
+   Almond Silk   : #C9ADA7
+   Seashell      : #F2E9E4
    ========================================================================== */
 
-/* Color codes used for the theme */
-$primary-color              : #4A4E69;  /* Dusty Grape as accent on light */
-$dark-primary-color         : mix(#000, $primary-color, 30%);
-$darker-primary-color       : mix(#000, $primary-color, 55%);
-$light-primary-color        : mix(#fff, $primary-color, 20%);
+/* Primary Accent (soft warmth) */
+$primary-color              : #C9ADA7;  /* Almond Silk */
+$dark-primary-color         : mix(#000, $primary-color, 40%);
+$darker-primary-color       : mix(#000, $primary-color, 60%);
+$light-primary-color        : mix(#fff, $primary-color, 15%);
 
-$background                 : #F2E9E4;  /* Seashell */
-$background-light           : #FFF;     /* panels */
-$background-lighter         : #FFF;
-$text                       : #22223B;  /* Space Indigo */
+/* Background System */
+$background                 : #22223B;  /* Space Indigo */
+$background-light           : #4A4E69;  /* Dusty Grape panels */
+$background-lighter         : mix(#fff, $background-light, 85%);
+$text                       : #F2E9E4;  /* Seashell */
 
-$link                       : mix(#22223B, $primary-color, 35%);
+/* Links */
+$link                       : mix(#C9ADA7, $text, 60%);
 $link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 15%);
-$footer                     : mix(#000, $background, 10%);
+$link-light                 : mix(#fff, $link, 20%);
 
-/* Color codes used for the site */
-$danger-color               : #E63946;
-$info-color                 : #457B9D;
-$notice-color               : #7A8288;
-$success-color              : #2A9D8F;
-$warning-color              : #F4A261;
+/* Footer */
+$footer                     : mix(#000, $background, 35%);
 
-/* Other basic settings for the template */
+/* Semantic Colors (retuned to match palette) */
+$danger-color               : #B56576;   /* muted rose */
+$info-color                 : #9A8C98;   /* Lilac Ash */
+$notice-color               : #8D99AE;   /* soft neutral */
+$success-color              : #81B29A;   /* subtle sage */
+$warning-color              : #E07A5F;   /* warm coral */
+
+/* Layout Settings */
 $border-radius              : 6px;
-$box-shadow                 : 0 2px 8px rgba(0, 0, 0, 0.12);
+$box-shadow                 : 0 2px 8px rgba(0, 0, 0, 0.25);
 $global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
@@ -35,24 +45,29 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Light theme for the site */
-html[data-theme="light"] {
+/* Apply as Dark Theme */
+html[data-theme="dark"] {
+
   --global-base-color                 : #{$primary-color};
   --global-bg-color                   : #{$background};
   --global-footer-bg-color            : #{$footer};
-  --global-border-color               : #{$light-primary-color};
-  --global-dark-border-color          : #{$background};
+  --global-border-color               : #{$background-light};
+  --global-dark-border-color          : #{$background-light};
 
-  --global-code-background-color      : #fafafa;
-  --global-code-text-color            : #{$darker-primary-color};
+  /* Code blocks adjusted for dark harmony */
+  --global-code-background-color      : #1B1B2F;
+  --global-code-text-color            : #{$text};
 
-  --global-fig-caption-color          : #{$dark-primary-color};
+  --global-fig-caption-color          : #{$light-primary-color};
   --global-link-color                 : #{$link};
-  --global-link-color-hover           : #{$link-dark};
+  --global-link-color-hover           : #{$primary-color};
   --global-link-color-visited         : #{$link-light};
+
   --global-masthead-link-color        : #{$text};
   --global-masthead-link-color-hover  : #{$primary-color};
+
   --global-text-color                 : #{$text};
-  --global-text-color-light           : #{$dark-primary-color};
-  --global-thead-color                : #{$background};
+  --global-text-color-light           : #{$light-primary-color};
+
+  --global-thead-color                : #{$background-light};
 }
