@@ -166,6 +166,48 @@ author_profile: true
   border-color: var(--global-base-color);
 }
 
+/* =====================
+   VIDEO THUMB MARKER (NEW)
+   ===================== */
+
+.media-thumb.video {
+  position: relative;
+}
+
+/* Play badge */
+.media-thumb.video::after {
+  content: "▶";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  line-height: 1;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.65);
+  background: radial-gradient(circle at center,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0.20) 45%,
+    rgba(0,0,0,0.00) 70%);
+  pointer-events: none;
+}
+
+/* Small "VIDEO" label */
+.media-thumb.video::before {
+  content: "VIDEO";
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  padding: 2px 6px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.70);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.9);
+  pointer-events: none;
+}
+
 /* Placeholder thumb/image for "no media yet" */
 .media-placeholder {
   width: 100%;
@@ -521,17 +563,17 @@ document.addEventListener("DOMContentLoaded", () => {
               <img src="{{ base_path }}/images/projects/maze4.png" alt="maze4">
             </div>
 
-            <div class="media-thumb"
+            <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344915/landon_not_allowed_perlin_elwn8y.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344915/landon_not_allowed_perlin_elwn8y.jpg" alt="Perlin noise demo">
             </div>
 
-            <div class="media-thumb"
+            <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344916/robert_cube_short_so5lfj.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344916/robert_cube_short_so5lfj.jpg" alt="Cube demo">
             </div>
 
-            <div class="media-thumb"
+            <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344940/liow_sphere_wu9uio.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344940/liow_sphere_wu9uio.jpg" alt="Sphere demo">
             </div>
@@ -572,17 +614,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
           <div class="media-thumbs">
-            <div class="media-thumb active"
+            <div class="media-thumb video active"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771356638/quadtree1_cmpr_vrj3ls.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771356638/quadtree1_cmpr_vrj3ls.jpg" alt="Quadtree demo 1">
             </div>
 
-            <div class="media-thumb"
+            <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771356740/quadtree3_cmpr_cwelbx.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771356740/quadtree3_cmpr_cwelbx.jpg" alt="Quadtree demo 2">
             </div>
 
-            <div class="media-thumb"
+            <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344893/quadtree2_edit_ls4pmx.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344893/quadtree2_edit_ls4pmx.jpg" alt="Quadtree demo 3">
             </div>
@@ -627,12 +669,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
           <div class="media-thumbs">
-            <div class="media-thumb active"
+            <div class="media-thumb video active"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344886/galaxia2_edit_wwwsx5.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344886/galaxia2_edit_wwwsx5.jpg" alt="Galaxian clip 1">
             </div>
 
-            <div class="media-thumb"
+            <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344888/galaxia1_edit_sicies.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344888/galaxia1_edit_sicies.jpg" alt="Galaxian clip 2">
             </div>
