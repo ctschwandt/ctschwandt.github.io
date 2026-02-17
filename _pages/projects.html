@@ -7,8 +7,701 @@ author_profile: true
 
 {% include base_path %}
 
+<style>
+.projects-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+.project-card {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 22px;
+  align-items: start;
+  padding: 18px;
+  margin: 22px 0;
+  border-radius: 14px;
+  box-shadow: var(--global-box-shadow, 0 2px 12px rgba(0,0,0,0.25));
+  border: 1px solid var(--global-border-color, rgba(255,255,255,0.12));
+  background: var(--global-bg-color, #111);
+}
 
+/* =====================
+   MEDIA VIEWER
+   ===================== */
+
+.media-viewer { width: 100%; }
+
+.media-main {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--global-border-color, rgba(255,255,255,0.15));
+  margin-bottom: 10px;
+  background: #000; /* clean letterbox */
+}
+
+/* Images: crops if needed */
+.media-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Clickable main image (button fills box) */
+.media-main button.img-open {
+  all: unset;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+
+/* Videos: do NOT crop/stretch */
+.media-main video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== Thumbs row + nice scrolling (fixed alignment) ===== */
+
+.media-thumbs-wrap {
+  position: relative;
+}
+
+/* the grey bar container */
+.media-thumbs-bar {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid var(--global-border-color, rgba(255,255,255,0.15));
+  background: rgba(255,255,255,0.06);
+  padding: 8px;      /* keeps thumbs off the border */
+  overflow: hidden;  /* clips fades nicely */
+}
+
+/* scrolling strip (NO side padding so it aligns like your old version) */
+.media-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  margin: 0;
+
+  scrollbar-width: none; /* Firefox hide */
+}
+.media-thumbs::-webkit-scrollbar { display: none; } /* Chrome/Safari hide */
+
+/* subtle fade edges inside the bar */
+.media-thumbs-bar::before,
+.media-thumbs-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  pointer-events: none;
+  z-index: 2;
+}
+.media-thumbs-bar::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(17,17,17,0.95), rgba(17,17,17,0));
+}
+.media-thumbs-bar::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(17,17,17,0.95), rgba(17,17,17,0));
+}
+
+/* arrow buttons float ON TOP of the bar */
+.thumb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--global-border-color, rgba(255,255,255,0.22));
+  background: rgba(0,0,0,0.70);
+  color: rgba(255,255,255,0.92);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 3;
+  transition: 0.15s ease;
+}
+
+.thumb-nav:hover { background: rgba(0,0,0,0.85); }
+.thumb-nav:active { transform: translateY(-50%) scale(0.96); }
+
+.thumb-nav.left  { left: 10px; }
+.thumb-nav.right { right: 10px; }
+
+.thumb-nav[hidden] { display: none; }
+
+.media-thumb {
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s ease;
+  flex: 0 0 auto;
+}
+
+.media-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.media-thumb.active {
+  border-color: var(--global-base-color);
+}
+
+/* Placeholder thumb/image for "no media yet" */
+.media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  color: rgba(255,255,255,0.75);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 14px;
+}
+
+.thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* =====================
+   LIGHTBOX (popup full image)
+   ===================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  background: rgba(0,0,0,0.78);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox.open { display: block; }
+
+.lightbox-inner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.lightbox-img {
+  max-width: min(1200px, 96vw);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--global-border-color, rgba(255,255,255,0.22));
+  background: #000;
+  box-shadow: 0 18px 70px rgba(0,0,0,0.55);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid var(--global-border-color, rgba(255,255,255,0.22));
+  background: rgba(0,0,0,0.75);
+  color: rgba(255,255,255,0.95);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox-hint {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.78);
+  background: rgba(0,0,0,0.55);
+  border: 1px solid var(--global-border-color, rgba(255,255,255,0.18));
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+/* =====================
+   TEXT SIDE
+   ===================== */
+
+.project-title {
+  margin: 0 0 6px 0;
+  font-size: 1.4rem;
+}
+
+.project-meta {
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.project-links a {
+  margin-right: 12px;
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+.project-bullets { padding-left: 1.1rem; }
+.project-bullets li { margin: 6px 0; }
+
+.projects-footer {
+  margin: 28px 0 12px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px dashed var(--global-border-color, rgba(255,255,255,0.18));
+  background: color-mix(in srgb, var(--global-bg-color, #111) 88%, #fff 12%);
+}
+
+@media (max-width: 900px) {
+  .project-card { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+/* ---------- media switching ---------- */
+function switchMedia(container, type, src, thumb) {
+  const main = container.querySelector(".media-main");
+  main.innerHTML = "";
+
+  if (type === "image") {
+    main.innerHTML = `
+      <button class="img-open" type="button" onclick="openLightbox('${src}')">
+        <img src="${src}" alt="">
+      </button>`;
+  } else if (type === "video") {
+    main.innerHTML = `
+      <video controls autoplay playsinline preload="metadata">
+        <source src="${src}" type="video/mp4">
+      </video>`;
+  } else if (type === "placeholder") {
+    main.innerHTML = `<div class="media-placeholder">${src}</div>`;
+  }
+
+  container.querySelectorAll(".media-thumb").forEach(t => t.classList.remove("active"));
+  thumb.classList.add("active");
+}
+
+/* ---------- thumbs scroller ---------- */
+function scrollThumbs(btn, dir) {
+  const wrap = btn.closest(".media-thumbs-wrap");
+  const row = wrap.querySelector(".media-thumbs");
+  const step = Math.max(160, Math.floor(row.clientWidth * 0.75));
+  row.scrollBy({ left: dir * step, behavior: "smooth" });
+}
+
+function updateThumbNav(wrap) {
+  const row = wrap.querySelector(".media-thumbs");
+  const left = wrap.querySelector(".thumb-nav.left");
+  const right = wrap.querySelector(".thumb-nav.right");
+
+  const overflows = row.scrollWidth > row.clientWidth + 2;
+  if (!overflows) {
+    left.hidden = true;
+    right.hidden = true;
+    return;
+  }
+
+  const atStart = row.scrollLeft <= 1;
+  const atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 1;
+
+  left.hidden = atStart;
+  right.hidden = atEnd;
+}
+
+function initThumbNav() {
+  document.querySelectorAll(".media-thumbs-wrap").forEach(wrap => {
+    const row = wrap.querySelector(".media-thumbs");
+    if (!row) return;
+
+    const refresh = () => updateThumbNav(wrap);
+
+    refresh();
+    row.addEventListener("scroll", refresh, { passive: true });
+    window.addEventListener("resize", refresh);
+    setTimeout(refresh, 250);
+  });
+}
+
+/* ---------- lightbox ---------- */
+function openLightbox(src) {
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  img.src = src;
+  lb.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  lb.classList.remove("open");
+  img.src = "";
+  document.body.style.overflow = "";
+}
+
+function initLightbox() {
+  const lb = document.getElementById("lightbox");
+  if (!lb) return;
+
+  // click outside image closes
+  lb.addEventListener("click", (e) => {
+    if (e.target === lb || e.target.classList.contains("lightbox-inner")) closeLightbox();
+  });
+
+  // Esc closes
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initThumbNav();
+  initLightbox();
+});
+</script>
+
+<!-- LIGHTBOX DOM (one per page) -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Close image">✕</button>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="Full image preview">
+    <div class="lightbox-hint">Click outside / press Esc to close</div>
+  </div>
+</div>
+
+<div class="projects-wrap">
+
+  <!-- =========================
+       PROJECT: MIPS Interpreter
+       ========================= -->
+  <section class="project-card">
+    <div class="media-viewer">
+      <div class="media-main">
+        <button class="img-open" type="button" onclick="openLightbox('{{ base_path }}/images/projects/mips1.png')">
+          <img src="{{ base_path }}/images/projects/mips1.png" alt="MIPS Interpreter preview">
+        </button>
+      </div>
+
+      <div class="media-thumbs-wrap">
+        <div class="media-thumbs-bar">
+          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
+          <div class="media-thumbs">
+            <div class="media-thumb active"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/mips1.png',this)">
+              <img src="{{ base_path }}/images/projects/mips1.png" alt="MIPS screenshot">
+            </div>
+          </div>
+          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="project-title">MIPS Assembly Interpreter</h2>
+      <p class="project-meta"><strong>Stack:</strong> C++</p>
+
+      <div class="project-links">
+        <a href="https://github.com/ctschwandt/MIPS-Assembly-Interpreter" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <ul class="project-bullets">
+        <li>Independently developed a MIPS32 assembly interpreter supporting arithmetic, memory access, labels, and control-flow instructions, and a simulated register file and memory model.</li>
+        <li>Built a DFA-based lexer and custom parser to tokenize MIPS assembly, expand pseudo-instructions, and encode instructions into 32-bit MIPS machine code.</li>
+        <li>Implemented file-based execution and an interactive REPL with live register and data segment inspection.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================
+       PROJECT: Python-2 Interpreter (no images yet)
+       ========================= -->
+  <section class="project-card">
+    <div class="media-viewer">
+      <div class="media-main">
+        <div class="media-placeholder">No screenshots yet (Python-2 Interpreter)</div>
+      </div>
+
+      <div class="media-thumbs-wrap">
+        <div class="media-thumbs-bar">
+          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
+          <div class="media-thumbs">
+            <div class="media-thumb active"
+              onclick="switchMedia(this.closest('.media-viewer'),'placeholder','No screenshots yet (Python-2 Interpreter)',this)">
+              <div class="thumb-placeholder">No<br>Image</div>
+            </div>
+          </div>
+          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="project-title">Python-2 Interpreter</h2>
+      <p class="project-meta"><strong>Stack:</strong> OCaml, ocamllex</p>
+
+      <div class="project-links">
+        <a href="https://github.com/ctschwandt/Python2-Interpreter-OCaml" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <ul class="project-bullets">
+        <li>Implemented a dynamically typed Python-2 interpreter in OCaml supporting mixed-type arithmetic, variables, and assignment semantics.</li>
+        <li>Built a custom lexer and recursive-descent parser to generate expression and statement ASTs for Python control-flow and blocks.</li>
+        <li>Built a runtime environment with symbol tables to execute Python expressions, assignments, and control flow.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================
+       PROJECT: OpenGL Maze FPS
+       ========================= -->
+  <section class="project-card">
+    <div class="media-viewer">
+      <div class="media-main">
+        <button class="img-open" type="button" onclick="openLightbox('{{ base_path }}/images/projects/maze1.png')">
+          <img src="{{ base_path }}/images/projects/maze1.png" alt="OpenGL Maze FPS preview">
+        </button>
+      </div>
+
+      <div class="media-thumbs-wrap">
+        <div class="media-thumbs-bar">
+          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
+          <div class="media-thumbs">
+            <div class="media-thumb active"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze1.png',this)">
+              <img src="{{ base_path }}/images/projects/maze1.png" alt="maze1">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze2.png',this)">
+              <img src="{{ base_path }}/images/projects/maze2.png" alt="maze2">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze3.png',this)">
+              <img src="{{ base_path }}/images/projects/maze3.png" alt="maze3">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze4.png',this)">
+              <img src="{{ base_path }}/images/projects/maze4.png" alt="maze4">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344915/landon_not_allowed_perlin_elwn8y.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344915/landon_not_allowed_perlin_elwn8y.jpg" alt="Perlin noise demo">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344916/robert_cube_short_so5lfj.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344916/robert_cube_short_so5lfj.jpg" alt="Cube demo">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344940/liow_sphere_wu9uio.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344940/liow_sphere_wu9uio.jpg" alt="Sphere demo">
+            </div>
+          </div>
+          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="project-title">OpenGL Maze FPS</h2>
+      <p class="project-meta"><strong>Stack:</strong> C++, OpenGL, GLFW</p>
+
+      <div class="project-links">
+        <a href="https://github.com/ctschwandt/OpenGL-Maze-FPS" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <ul class="project-bullets">
+        <li>Independently developed a 3D first-person shooter featuring procedurally generated mazes, textured geometry, dual camera modes, and animated skyboxes driven by Perlin noise and Diamond–Square fractals.</li>
+        <li>Implemented core engine systems including player physics, shooting mechanics, enemy AI behaviors, and collision detection.</li>
+        <li>Improved rendering performance using tile-based visibility raycasting to cull walls, enemies, and projectiles outside the player’s field of view.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================
+       PROJECT: Quadtree Collision
+       ========================= -->
+  <section class="project-card">
+    <div class="media-viewer">
+      <div class="media-main">
+        <video controls autoplay playsinline preload="metadata">
+          <source src="https://res.cloudinary.com/doojblikb/video/upload/v1771356638/quadtree1_cmpr_vrj3ls.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="media-thumbs-wrap">
+        <div class="media-thumbs-bar">
+          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
+          <div class="media-thumbs">
+            <div class="media-thumb active"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771356638/quadtree1_cmpr_vrj3ls.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771356638/quadtree1_cmpr_vrj3ls.jpg" alt="Quadtree demo 1">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771356740/quadtree3_cmpr_cwelbx.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771356740/quadtree3_cmpr_cwelbx.jpg" alt="Quadtree demo 2">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344893/quadtree2_edit_ls4pmx.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344893/quadtree2_edit_ls4pmx.jpg" alt="Quadtree demo 3">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/quad2.png',this)">
+              <img src="{{ base_path }}/images/projects/quad2.png" alt="quad2 image">
+            </div>
+          </div>
+          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="project-title">Quadtree Collision</h2>
+      <p class="project-meta"><strong>Stack:</strong> C++, SDL</p>
+
+      <div class="project-links">
+        <a href="https://github.com/ctschwandt/Quadtree-Collision" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <ul class="project-bullets">
+        <li>Developed a 2D particle simulation comparing quadtree-based and brute-force collision detection for up to 1000 dynamically colliding particles.</li>
+        <li>Integrated FPS benchmarking to empirically evaluate performance tradeoffs between collision methods.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================
+       PROJECT: Galaxian Clone
+       ========================= -->
+  <section class="project-card">
+    <div class="media-viewer">
+      <div class="media-main">
+        <video controls autoplay playsinline preload="metadata">
+          <source src="https://res.cloudinary.com/doojblikb/video/upload/v1771344886/galaxia2_edit_wwwsx5.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="media-thumbs-wrap">
+        <div class="media-thumbs-bar">
+          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
+          <div class="media-thumbs">
+            <div class="media-thumb active"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344886/galaxia2_edit_wwwsx5.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344886/galaxia2_edit_wwwsx5.jpg" alt="Galaxian clip 1">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344888/galaxia1_edit_sicies.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344888/galaxia1_edit_sicies.jpg" alt="Galaxian clip 2">
+            </div>
+          </div>
+          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="project-title">Galaxian Clone</h2>
+      <p class="project-meta"><strong>Stack:</strong> C++, SDL</p>
+
+      <div class="project-links">
+        <a href="https://github.com/ctschwandt" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <ul class="project-bullets">
+        <li>Built a Galaxian-style arcade shooter with classic enemy formations, projectile patterns, and scoring.</li>
+        <li>Implemented game loop timing, collision detection, and responsive keyboard controls.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================
+       PROJECT: Talbook
+       ========================= -->
+  <section class="project-card">
+    <div class="media-viewer">
+      <div class="media-main">
+        <button class="img-open" type="button" onclick="openLightbox('{{ base_path }}/images/projects/talbook4.png')">
+          <img src="{{ base_path }}/images/projects/talbook4.png" alt="Talbook preview">
+        </button>
+      </div>
+
+      <div class="media-thumbs-wrap">
+        <div class="media-thumbs-bar">
+          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
+          <div class="media-thumbs">
+            <div class="media-thumb active"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/talbook4.png',this)">
+              <img src="{{ base_path }}/images/projects/talbook4.png" alt="Talbook screenshot">
+            </div>
+          </div>
+          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="project-title">Talbook</h2>
+      <p class="project-meta"><strong>Stack:</strong> Python, Flask, MySQL, HTML/CSS</p>
+
+      <div class="project-links">
+        <a href="https://talbook.pythonanywhere.com/" target="_blank" rel="noopener">Live Site</a>
+        <a href="https://github.com/OladayoOyedeji/Talbook" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <ul class="project-bullets">
+        <li>Co-developed a marketplace-style web application for music gear, implementing core features including listings, user feeds, and direct messaging.</li>
+        <li>Designed and integrated a relational MySQL schema supporting users, items, posts, messaging, and search functionality.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="projects-footer">
+    <strong>Additional Projects:</strong>
+    Procedural Terrain Generator (OpenGL), Mandelbrot Fractal (OpenGL), IMDb Database Clone (SQL),
+    Multithreaded Webscraper for Cryptanalysis (Python), Tic-Tac-Toe (MIPS Assembly)
+  </section>
+
+</div>
