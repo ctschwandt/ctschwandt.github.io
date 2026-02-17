@@ -70,29 +70,6 @@ redirect_from:
 @media (max-width: 520px) {
   .setup-grid { grid-template-columns: 1fr; }
 }
-
-/* ===== GitHub-style contribution heatmap ===== */
-.contrib-wrap {
-  display: grid;
-  place-items: center;
-}
-.contrib-heatmap {
-  width: 100%;
-  max-width: 860px;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  background: rgba(0,0,0,0.10);
-  padding: 10px;
-  border: 1px solid var(--global-border-color, rgba(255,255,255,0.10));
-}
-.contrib-fallback {
-  display: none;
-  margin-top: 8px;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  text-align: center;
-}
 </style>
 
 <div class="about-wrap">
@@ -198,37 +175,4 @@ redirect_from:
     </div>
   </section>
 
-  <!-- GITHUB CONTRIBUTION HEATMAP -->
-  <section class="section-card">
-    <header>
-      <p class="section-title">Recent Activity</p>
-      <span class="section-tag">contrib</span>
-    </header>
-
-    <div class="section-content">
-      <div class="contrib-wrap">
-        <img
-          id="contribHeatmap"
-          class="contrib-heatmap"
-          src="{{ '/assets/contrib.svg' | relative_url }}"
-          alt="GitHub contributions heatmap for ctschwandt"
-          loading="lazy"
-          decoding="async"
-        >
-        <div id="contribFallback" class="contrib-fallback">
-          Heatmap not found.
-        </div>
-      </div>
-    </div>
-  </section>
-
 </div>
-
-<script>
-  (function () {
-    const img = document.getElementById("contribHeatmap");
-    const fb  = document.getElementById("contribFallback");
-    if (!img || !fb) return;
-    img.addEventListener("error", () => { fb.style.display = "block"; });
-  })();
-</script>
