@@ -1,3 +1,30 @@
+<script>
+  (function () {
+    var THEME = "dark";
+
+    try {
+      // Persisted preference keys used by various themes/toggles
+      localStorage.setItem("theme", THEME);
+      localStorage.setItem("mode", THEME);
+      localStorage.setItem("color-scheme", THEME);
+      localStorage.setItem("colorScheme", THEME);
+      localStorage.setItem("pref-theme", THEME);
+    } catch (e) {}
+
+    // DOM hooks used by CSS/JS to apply theme
+    var root = document.documentElement;
+    root.setAttribute("data-theme", THEME);
+    root.setAttribute("data-mode", THEME);
+    root.classList.add("theme-dark");
+    root.classList.add("dark");
+    root.classList.remove("theme-light");
+    root.classList.remove("light");
+  })();
+</script>
+
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0f0f0f">
+
 {% include base_path %}
 
 <!-- start custom head snippets -->
