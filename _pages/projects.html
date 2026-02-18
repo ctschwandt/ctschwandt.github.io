@@ -420,12 +420,12 @@ function initLightbox() {
   const lb = document.getElementById("lightbox");
   if (!lb) return;
 
-  // click outside image closes
+  /* click outside image closes */
   lb.addEventListener("click", (e) => {
     if (e.target === lb || e.target.classList.contains("lightbox-inner")) closeLightbox();
   });
 
-  // Esc closes
+  /* Esc closes */
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLightbox();
   });
