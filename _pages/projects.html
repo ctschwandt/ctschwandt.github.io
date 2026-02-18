@@ -203,7 +203,7 @@ author_profile: true
   letter-spacing: 0.06em;
   border-radius: 999px;
   background: rgba(0,0,0,0.70);
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.22));
   color: rgba(255,255,255,0.9);
   pointer-events: none;
 }
@@ -449,6 +449,77 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="projects-wrap">
 
   <!-- =========================
+       PROJECT: OpenGL Maze FPS
+       ========================= -->
+  <section class="project-card">
+    <div class="media-viewer">
+      <div class="media-main">
+        <button class="img-open" type="button" onclick="openLightbox('{{ base_path }}/images/projects/maze1.png')">
+          <img src="{{ base_path }}/images/projects/maze1.png" alt="OpenGL Maze FPS preview">
+        </button>
+      </div>
+
+      <div class="media-thumbs-wrap">
+        <div class="media-thumbs-bar">
+          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
+          <div class="media-thumbs">
+            <div class="media-thumb active"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze1.png',this)">
+              <img src="{{ base_path }}/images/projects/maze1.png" alt="maze1">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze2.png',this)">
+              <img src="{{ base_path }}/images/projects/maze2.png" alt="maze2">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze3.png',this)">
+              <img src="{{ base_path }}/images/projects/maze3.png" alt="maze3">
+            </div>
+
+            <div class="media-thumb"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze4.png',this)">
+              <img src="{{ base_path }}/images/projects/maze4.png" alt="maze4">
+            </div>
+
+            <div class="media-thumb video"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344915/landon_not_allowed_perlin_elwn8y.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344915/landon_not_allowed_perlin_elwn8y.jpg" alt="Perlin noise demo">
+            </div>
+
+            <div class="media-thumb video"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344916/robert_cube_short_so5lfj.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344916/robert_cube_short_so5lfj.jpg" alt="Cube demo">
+            </div>
+
+            <div class="media-thumb video"
+              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344940/liow_sphere_wu9uio.mp4',this)">
+              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344940/liow_sphere_wu9uio.jpg" alt="Sphere demo">
+            </div>
+          </div>
+          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="project-title">OpenGL Maze FPS</h2>
+      <p class="project-meta"><strong>Stack:</strong> C++, OpenGL, GLFW</p>
+
+      <div class="project-links">
+        <a href="https://github.com/ctschwandt/OpenGL-Maze-FPS" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <ul class="project-bullets">
+        <li>Independently developed a 3D first-person shooter featuring procedurally generated mazes, textured geometry, dual camera modes, and animated skyboxes driven by Perlin noise and Diamond–Square fractals.</li>
+        <li>Implemented core engine systems including player physics, shooting mechanics, enemy AI behaviors, and collision detection.</li>
+        <li>Improved rendering performance using tile-based visibility raycasting to cull walls, enemies, and projectiles outside the player’s field of view.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================
        PROJECT: MIPS Interpreter
        ========================= -->
   <section class="project-card">
@@ -524,77 +595,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <li>Implemented a dynamically typed Python-2 interpreter in OCaml supporting mixed-type arithmetic, variables, and assignment semantics.</li>
         <li>Built a custom lexer and recursive-descent parser to generate expression and statement ASTs for Python control-flow and blocks.</li>
         <li>Built a runtime environment with symbol tables to execute Python expressions, assignments, and control flow.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- =========================
-       PROJECT: OpenGL Maze FPS
-       ========================= -->
-  <section class="project-card">
-    <div class="media-viewer">
-      <div class="media-main">
-        <button class="img-open" type="button" onclick="openLightbox('{{ base_path }}/images/projects/maze1.png')">
-          <img src="{{ base_path }}/images/projects/maze1.png" alt="OpenGL Maze FPS preview">
-        </button>
-      </div>
-
-      <div class="media-thumbs-wrap">
-        <div class="media-thumbs-bar">
-          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
-          <div class="media-thumbs">
-            <div class="media-thumb active"
-              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze1.png',this)">
-              <img src="{{ base_path }}/images/projects/maze1.png" alt="maze1">
-            </div>
-
-            <div class="media-thumb"
-              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze2.png',this)">
-              <img src="{{ base_path }}/images/projects/maze2.png" alt="maze2">
-            </div>
-
-            <div class="media-thumb"
-              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze3.png',this)">
-              <img src="{{ base_path }}/images/projects/maze3.png" alt="maze3">
-            </div>
-
-            <div class="media-thumb"
-              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze4.png',this)">
-              <img src="{{ base_path }}/images/projects/maze4.png" alt="maze4">
-            </div>
-
-            <div class="media-thumb video"
-              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344915/landon_not_allowed_perlin_elwn8y.mp4',this)">
-              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344915/landon_not_allowed_perlin_elwn8y.jpg" alt="Perlin noise demo">
-            </div>
-
-            <div class="media-thumb video"
-              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344916/robert_cube_short_so5lfj.mp4',this)">
-              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344916/robert_cube_short_so5lfj.jpg" alt="Cube demo">
-            </div>
-
-            <div class="media-thumb video"
-              onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344940/liow_sphere_wu9uio.mp4',this)">
-              <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344940/liow_sphere_wu9uio.jpg" alt="Sphere demo">
-            </div>
-          </div>
-          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h2 class="project-title">OpenGL Maze FPS</h2>
-      <p class="project-meta"><strong>Stack:</strong> C++, OpenGL, GLFW</p>
-
-      <div class="project-links">
-        <a href="https://github.com/ctschwandt/OpenGL-Maze-FPS" target="_blank" rel="noopener">GitHub</a>
-      </div>
-
-      <ul class="project-bullets">
-        <li>Independently developed a 3D first-person shooter featuring procedurally generated mazes, textured geometry, dual camera modes, and animated skyboxes driven by Perlin noise and Diamond–Square fractals.</li>
-        <li>Implemented core engine systems including player physics, shooting mechanics, enemy AI behaviors, and collision detection.</li>
-        <li>Improved rendering performance using tile-based visibility raycasting to cull walls, enemies, and projectiles outside the player’s field of view.</li>
       </ul>
     </div>
   </section>
@@ -736,6 +736,47 @@ document.addEventListener("DOMContentLoaded", () => {
       <ul class="project-bullets">
         <li>Co-developed a marketplace-style web application for music gear, implementing core features including listings, user feeds, and direct messaging.</li>
         <li>Designed and integrated a relational MySQL schema supporting users, items, posts, messaging, and search functionality.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================
+       PROJECT: Othello (JavaFX)
+       ========================= -->
+  <section class="project-card">
+    <div class="media-viewer">
+      <div class="media-main">
+        <button class="img-open" type="button" onclick="openLightbox('{{ base_path }}/images/projects/java_othello1.png')">
+          <img src="{{ base_path }}/images/projects/java_othello1.png" alt="Othello (JavaFX) preview">
+        </button>
+      </div>
+
+      <div class="media-thumbs-wrap">
+        <div class="media-thumbs-bar">
+          <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
+          <div class="media-thumbs">
+            <div class="media-thumb active"
+              onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/java_othello1.png',this)">
+              <img src="{{ base_path }}/images/projects/java_othello1.png" alt="Othello screenshot">
+            </div>
+          </div>
+          <button class="thumb-nav right" onclick="scrollThumbs(this,1)" aria-label="Scroll thumbnails right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="project-title">Othello (JavaFX)</h2>
+      <p class="project-meta"><strong>Stack:</strong> Java, JavaFX</p>
+
+      <div class="project-links">
+        <a href="https://github.com/ctschwandt/JavaFX-Othello" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <ul class="project-bullets">
+        <li>Built a JavaFX implementation of Othello with configurable board sizes, a setup mode for custom starting positions, and a responsive resizable UI.</li>
+        <li>Implemented fully enforced game rules including legal move detection, piece flipping, turn progression, and end-game scoring.</li>
+        <li>Added save/load support by serializing game state (board, turn, and settings) into a persistent text format.</li>
       </ul>
     </div>
   </section>
