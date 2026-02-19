@@ -4,15 +4,12 @@ title: "Projects"
 permalink: /projects/
 author_profile: true
 ---
-
 {% include base_path %}
-
 <style>
 .projects-wrap {
   max-width: 1100px;
   margin: 0 auto;
 }
-
 .project-card {
   display: grid;
   grid-template-columns: 440px 1fr;
@@ -25,9 +22,7 @@ author_profile: true
   border: 1px solid var(--global-border-color, rgba(255,255,255,0.12));
   background: var(--global-bg-color, #111);
 }
-
 .media-viewer { width: 100%; }
-
 .media-main {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -37,14 +32,12 @@ author_profile: true
   margin-bottom: 10px;
   background: #000;
 }
-
 .media-main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
 .media-main button.img-open {
   all: unset;
   display: block;
@@ -52,31 +45,26 @@ author_profile: true
   height: 100%;
   cursor: zoom-in;
 }
-
 .media-main video {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
 }
-
 .vp {
   position: relative;
   width: 100%;
   height: 100%;
   background: #000;
 }
-
 .vp video {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
 }
-
 .vp video::-webkit-media-controls { display: none !important; }
 .vp video::-webkit-media-controls-enclosure { display: none !important; }
-
 .vp-ui {
   position: absolute;
   inset: 0;
@@ -86,9 +74,7 @@ author_profile: true
   opacity: 1;
   transition: opacity 0.18s ease;
 }
-
 .vp-ui.hide { opacity: 0; }
-
 .vp-top {
   display: flex;
   align-items: flex-start;
@@ -96,13 +82,11 @@ author_profile: true
   padding: 8px;
   gap: 8px;
 }
-
 .vp-bottom {
   pointer-events: auto;
   padding: 8px 8px 10px;
   background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.18), rgba(0,0,0,0.00));
 }
-
 .vp-row {
   display: flex;
   align-items: center;
@@ -110,13 +94,10 @@ author_profile: true
   flex-wrap: nowrap;
   min-width: 0;
 }
-
 .vp-row .vp-time {
   flex: 1 1 auto;
   min-width: 0;
 }
-
-/* big center play button */
 .vp-center {
   position: absolute;
   inset: 0;
@@ -124,7 +105,6 @@ author_profile: true
   place-items: center;
   pointer-events: auto;
 }
-
 .vp-bigbtn {
   width: 56px;
   height: 56px;
@@ -144,7 +124,6 @@ author_profile: true
 }
 .vp-bigbtn:hover { transform: scale(1.03); background: rgba(0,0,0,0.68); }
 .vp-bigbtn:active { transform: scale(0.98); }
-
 .vp-btn {
   width: 30px;
   height: 30px;
@@ -164,7 +143,6 @@ author_profile: true
 }
 .vp-btn:hover { background: rgba(0,0,0,0.62); }
 .vp-btn:active { transform: scale(0.97); }
-
 .vp-time {
   font-variant-numeric: tabular-nums;
   font-size: 0.80rem;
@@ -174,7 +152,6 @@ author_profile: true
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .vp-progress {
   position: relative;
   height: 6px;
@@ -184,21 +161,18 @@ author_profile: true
   cursor: pointer;
   pointer-events: auto;
 }
-
 .vp-progress .vp-played {
   position: absolute;
   inset: 0;
   width: 0%;
   background: color-mix(in srgb, var(--global-base-color) 80%, #ffffff 20%);
 }
-
 .vp-progress .vp-buffered {
   position: absolute;
   inset: 0;
   width: 0%;
   background: rgba(255,255,255,0.18);
 }
-
 .vp-progress .vp-handle {
   position: absolute;
   top: 50%;
@@ -213,14 +187,12 @@ author_profile: true
   transition: opacity 0.15s ease;
 }
 .vp:hover .vp-progress .vp-handle { opacity: 1; }
-
 .vp-vol {
   display: flex;
   align-items: center;
   gap: 8px;
   flex: 0 0 auto;
 }
-
 .vp-vol input[type="range"]{
   -webkit-appearance: none;
   appearance: none;
@@ -266,7 +238,6 @@ author_profile: true
   border: 1px solid rgba(0,0,0,0.30);
   box-shadow: 0 4px 18px rgba(0,0,0,0.45);
 }
-
 .vp-badge {
   pointer-events: auto;
   user-select: none;
@@ -278,9 +249,7 @@ author_profile: true
   background: rgba(0,0,0,0.40);
   backdrop-filter: blur(6px);
 }
-
 .media-thumbs-wrap { position: relative; }
-
 .media-thumbs-bar {
   position: relative;
   border-radius: 12px;
@@ -289,7 +258,6 @@ author_profile: true
   padding: 8px;
   overflow: hidden;
 }
-
 .media-thumbs {
   display: flex;
   gap: 8px;
@@ -298,11 +266,9 @@ author_profile: true
   -webkit-overflow-scrolling: touch;
   padding: 0;
   margin: 0;
-
   scrollbar-width: none;
 }
 .media-thumbs::-webkit-scrollbar { display: none; }
-
 .media-thumbs-bar::before,
 .media-thumbs-bar::after {
   content: "";
@@ -321,7 +287,6 @@ author_profile: true
   right: 0;
   background: linear-gradient(to left, rgba(17,17,17,0.95), rgba(17,17,17,0));
 }
-
 .thumb-nav {
   position: absolute;
   top: 50%;
@@ -339,15 +304,11 @@ author_profile: true
   z-index: 3;
   transition: 0.15s ease;
 }
-
 .thumb-nav:hover { background: rgba(0,0,0,0.85); }
 .thumb-nav:active { transform: translateY(-50%) scale(0.96); }
-
 .thumb-nav.left  { left: 10px; }
 .thumb-nav.right { right: 10px; }
-
 .thumb-nav[hidden] { display: none; }
-
 .media-thumb {
   width: 80px;
   height: 60px;
@@ -358,18 +319,14 @@ author_profile: true
   transition: 0.2s ease;
   flex: 0 0 auto;
 }
-
 .media-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
 .media-thumb.active { border-color: var(--global-base-color); }
-
 .media-thumb.video { position: relative; }
-
 .media-thumb.video::after {
   content: "▶";
   position: absolute;
@@ -386,7 +343,6 @@ author_profile: true
     rgba(0,0,0,0.00) 70%);
   pointer-events: none;
 }
-
 .media-thumb.video::before {
   content: "VIDEO";
   position: absolute;
@@ -401,7 +357,6 @@ author_profile: true
   color: rgba(255,255,255,0.9);
   pointer-events: none;
 }
-
 .media-placeholder {
   width: 100%;
   height: 100%;
@@ -413,7 +368,6 @@ author_profile: true
   text-align: center;
   padding: 14px;
 }
-
 .thumb-placeholder {
   width: 100%;
   height: 100%;
@@ -424,7 +378,6 @@ author_profile: true
   font-size: 0.75rem;
   text-align: center;
 }
-
 .lightbox {
   position: fixed;
   inset: 0;
@@ -433,9 +386,7 @@ author_profile: true
   background: rgba(0,0,0,0.78);
   backdrop-filter: blur(6px);
 }
-
 .lightbox.open { display: block; }
-
 .lightbox-inner {
   position: absolute;
   inset: 0;
@@ -443,7 +394,6 @@ author_profile: true
   place-items: center;
   padding: 22px;
 }
-
 .lightbox-img {
   max-width: min(1200px, 96vw);
   max-height: 90vh;
@@ -454,7 +404,6 @@ author_profile: true
   background: #000;
   box-shadow: 0 18px 70px rgba(0,0,0,0.55);
 }
-
 .lightbox-close {
   position: absolute;
   top: 14px;
@@ -470,7 +419,6 @@ author_profile: true
   cursor: pointer;
   user-select: none;
 }
-
 .lightbox-hint {
   position: absolute;
   bottom: 14px;
@@ -483,27 +431,21 @@ author_profile: true
   border-radius: 999px;
   padding: 6px 10px;
 }
-
 .project-title {
   margin: 0 0 6px 0;
   font-size: 1.4rem;
 }
-
 .project-meta {
   margin-bottom: 12px;
   opacity: 0.9;
 }
-
 .project-links a {
   margin-right: 12px;
   text-decoration: none;
 }
-
 .project-links a:hover { text-decoration: underline; }
-
 .project-bullets { padding-left: 1.1rem; }
 .project-bullets li { margin: 6px 0; }
-
 .projects-footer {
   margin: 28px 0 12px;
   padding: 16px 18px;
@@ -511,15 +453,12 @@ author_profile: true
   border: 1px dashed var(--global-border-color, rgba(255,255,255,0.18));
   background: color-mix(in srgb, var(--global-bg-color, #111) 88%, #000 12%);
 }
-
 @media (max-width: 900px) {
   .project-card { grid-template-columns: 1fr; }
   .media-main { aspect-ratio: 16 / 10; }
 </style>
-
 <script>
 function clamp(n, a, b) { return Math.min(b, Math.max(a, n)); }
-
 function formatTime(sec) {
   if (!isFinite(sec) || sec < 0) sec = 0;
   const s = Math.floor(sec % 60);
@@ -528,7 +467,6 @@ function formatTime(sec) {
   const pad = (x) => String(x).padStart(2, "0");
   return h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${m}:${pad(s)}`;
 }
-
 function setRangeFill(rangeEl, pct) {
   rangeEl.style.background =
     `linear-gradient(to right,
@@ -537,40 +475,32 @@ function setRangeFill(rangeEl, pct) {
       rgba(255,255,255,0.18) ${pct}%,
       rgba(255,255,255,0.18) 100%)`;
 }
-
 function videoPlayerMarkup(src, autoplay=true) {
   const auto = autoplay ? "autoplay" : "";
   return `
     <div class="vp" data-src="${src}" tabindex="0">
       <video playsinline preload="metadata" ${auto}></video>
-
       <div class="vp-center">
         <button class="vp-bigbtn" type="button" data-action="toggle" aria-label="Play/Pause">▶</button>
       </div>
-
       <div class="vp-ui">
         <div class="vp-top">
           <div class="vp-badge" data-el="hint" style="display:none;"></div>
         </div>
-
         <div class="vp-bottom">
           <div class="vp-progress" data-el="progress" aria-label="Seek bar" role="slider" tabindex="0">
             <div class="vp-buffered" data-el="buffered"></div>
             <div class="vp-played" data-el="played"></div>
             <div class="vp-handle" data-el="handle"></div>
           </div>
-
           <div class="vp-row" style="margin-top:10px;">
             <button class="vp-btn" type="button" data-action="toggle" aria-label="Play/Pause">▶</button>
             <button class="vp-btn" type="button" data-action="rewind" aria-label="Rewind 10 seconds">↺</button>
-
             <div class="vp-time" data-el="time">0:00 / 0:00</div>
-
             <div class="vp-vol">
               <button class="vp-btn" type="button" data-action="mute" aria-label="Mute/Unmute">🔊</button>
               <input data-el="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
             </div>
-
             <button class="vp-btn" type="button" data-action="pip" aria-label="Picture in Picture">▣</button>
             <button class="vp-btn" type="button" data-action="fs" aria-label="Fullscreen">⛶</button>
           </div>
@@ -578,14 +508,11 @@ function videoPlayerMarkup(src, autoplay=true) {
       </div>
     </div>`;
 }
-
 function setupVideoPlayer(vp) {
   const src = vp.getAttribute("data-src");
   const video = vp.querySelector("video");
-
   video.src = src;
   video.controls = false;
-
   const ui = vp.querySelector(".vp-ui");
   const big = vp.querySelector(".vp-bigbtn");
   const timeEl = vp.querySelector('[data-el="time"]');
@@ -595,10 +522,8 @@ function setupVideoPlayer(vp) {
   const handle = vp.querySelector('[data-el="handle"]');
   const vol = vp.querySelector('[data-el="volume"]');
   const hint = vp.querySelector('[data-el="hint"]');
-
   let hideTimer = null;
   let isScrubbing = false;
-
   function showUI() {
     ui.classList.remove("hide");
     clearTimeout(hideTimer);
@@ -606,23 +531,19 @@ function setupVideoPlayer(vp) {
       hideTimer = setTimeout(() => ui.classList.add("hide"), 1800);
     }
   }
-
   function updateButtons() {
     const icon = video.paused ? "▶" : "⏸";
     vp.querySelectorAll('[data-action="toggle"]').forEach(b => b.textContent = icon);
     big.style.opacity = video.paused ? "1" : "0";
   }
-
   function updateTime() {
     const cur = video.currentTime || 0;
     const dur = video.duration || 0;
     timeEl.textContent = `${formatTime(cur)} / ${formatTime(dur)}`;
-
     const pct = dur > 0 ? (cur / dur) * 100 : 0;
     played.style.width = `${pct}%`;
     handle.style.left = `${pct}%`;
   }
-
   function updateBuffered() {
     const dur = video.duration || 0;
     if (!dur || !video.buffered || video.buffered.length === 0) {
@@ -632,47 +553,39 @@ function setupVideoPlayer(vp) {
     const end = video.buffered.end(video.buffered.length - 1);
     buffered.style.width = `${clamp((end / dur) * 100, 0, 100)}%`;
   }
-
   function seekToClientX(clientX) {
     const rect = progress.getBoundingClientRect();
     const dur = video.duration || 0;
     const ratio = clamp((clientX - rect.left) / rect.width, 0, 1);
     if (dur > 0) video.currentTime = ratio * dur;
   }
-
   function flashHint(text) {
     hint.textContent = text;
     hint.style.display = "inline-block";
     clearTimeout(hint._t);
     hint._t = setTimeout(() => (hint.style.display = "none"), 700);
   }
-
   function toggle() {
     if (video.paused) video.play();
     else video.pause();
   }
-
   function rewind() {
     video.currentTime = Math.max(0, (video.currentTime || 0) - 10);
     flashHint("-10s");
   }
-
   function mute() {
     video.muted = !video.muted;
     updateVolumeIcon();
   }
-
   function updateVolumeIcon() {
     const b = vp.querySelector('[data-action="mute"]');
     b.textContent = (video.muted || video.volume === 0) ? "🔇" : "🔊";
   }
-
   function updateVolumeFill() {
     const v = parseFloat(vol.value || "1");
     const pct = clamp(v * 100, 0, 100);
     setRangeFill(vol, pct);
   }
-
   async function pip() {
     try {
       if (!document.pictureInPictureEnabled) return;
@@ -680,13 +593,11 @@ function setupVideoPlayer(vp) {
       else await video.requestPictureInPicture();
     } catch (e) {}
   }
-
   function fullscreen() {
     const el = vp;
     if (document.fullscreenElement) document.exitFullscreen?.();
     else el.requestFullscreen?.();
   }
-
   vp.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-action]");
     if (!btn) return;
@@ -698,9 +609,7 @@ function setupVideoPlayer(vp) {
     if (action === "fs") fullscreen();
     showUI();
   });
-
   video.addEventListener("click", () => { toggle(); showUI(); });
-
   vp.addEventListener("keydown", (e) => {
     const key = e.key;
     if (key === " " || key === "k") { e.preventDefault(); toggle(); }
@@ -710,31 +619,26 @@ function setupVideoPlayer(vp) {
     if (key === "f") { e.preventDefault(); fullscreen(); }
     showUI();
   });
-
   progress.addEventListener("pointerdown", (e) => {
     isScrubbing = true;
     progress.setPointerCapture(e.pointerId);
     seekToClientX(e.clientX);
     showUI();
   });
-
   progress.addEventListener("pointermove", (e) => {
     if (!isScrubbing) return;
     seekToClientX(e.clientX);
   });
-
   progress.addEventListener("pointerup", () => {
     isScrubbing = false;
     showUI();
   });
-
   progress.addEventListener("keydown", (e) => {
     const dur = video.duration || 0;
     if (!dur) return;
     if (e.key === "ArrowLeft") { e.preventDefault(); video.currentTime = Math.max(0, (video.currentTime || 0) - 5); }
     if (e.key === "ArrowRight") { e.preventDefault(); video.currentTime = Math.min(dur, (video.currentTime || 0) + 5); }
   });
-
   vol.addEventListener("input", () => {
     const v = parseFloat(vol.value);
     video.volume = v;
@@ -742,21 +646,17 @@ function setupVideoPlayer(vp) {
     updateVolumeIcon();
     updateVolumeFill();
   });
-
   vp.addEventListener("pointermove", showUI);
   vp.addEventListener("pointerleave", () => {
     clearTimeout(hideTimer);
     if (!video.paused) ui.classList.add("hide");
   });
-
   video.addEventListener("play", () => { updateButtons(); showUI(); });
   video.addEventListener("pause", () => { updateButtons(); ui.classList.remove("hide"); });
   video.addEventListener("timeupdate", updateTime);
   video.addEventListener("durationchange", updateTime);
   video.addEventListener("progress", updateBuffered);
   video.addEventListener("loadedmetadata", () => { updateTime(); updateBuffered(); });
-
-  // initial
   updateButtons();
   updateTime();
   updateBuffered();
@@ -764,11 +664,9 @@ function setupVideoPlayer(vp) {
   updateVolumeFill();
   showUI();
 }
-
 function switchMedia(container, type, src, thumb) {
   const main = container.querySelector(".media-main");
   main.innerHTML = "";
-
   if (type === "image") {
     main.innerHTML = `
       <button class="img-open" type="button" onclick="openLightbox('${src}')">
@@ -781,51 +679,41 @@ function switchMedia(container, type, src, thumb) {
   } else if (type === "placeholder") {
     main.innerHTML = `<div class="media-placeholder">${src}</div>`;
   }
-
   container.querySelectorAll(".media-thumb").forEach(t => t.classList.remove("active"));
   thumb.classList.add("active");
 }
-
 function scrollThumbs(btn, dir) {
   const wrap = btn.closest(".media-thumbs-wrap");
   const row = wrap.querySelector(".media-thumbs");
   const step = Math.max(160, Math.floor(row.clientWidth * 0.75));
   row.scrollBy({ left: dir * step, behavior: "smooth" });
 }
-
 function updateThumbNav(wrap) {
   const row = wrap.querySelector(".media-thumbs");
   const left = wrap.querySelector(".thumb-nav.left");
   const right = wrap.querySelector(".thumb-nav.right");
-
   const overflows = row.scrollWidth > row.clientWidth + 2;
   if (!overflows) {
     left.hidden = true;
     right.hidden = true;
     return;
   }
-
   const atStart = row.scrollLeft <= 1;
   const atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 1;
-
   left.hidden = atStart;
   right.hidden = atEnd;
 }
-
 function initThumbNav() {
   document.querySelectorAll(".media-thumbs-wrap").forEach(wrap => {
     const row = wrap.querySelector(".media-thumbs");
     if (!row) return;
-
     const refresh = () => updateThumbNav(wrap);
-
     refresh();
     row.addEventListener("scroll", refresh, { passive: true });
     window.addEventListener("resize", refresh);
     setTimeout(refresh, 250);
   });
 }
-
 function openLightbox(src) {
   const lb = document.getElementById("lightbox");
   const img = document.getElementById("lightboxImg");
@@ -833,7 +721,6 @@ function openLightbox(src) {
   lb.classList.add("open");
   document.body.style.overflow = "hidden";
 }
-
 function closeLightbox() {
   const lb = document.getElementById("lightbox");
   const img = document.getElementById("lightboxImg");
@@ -841,31 +728,25 @@ function closeLightbox() {
   img.src = "";
   document.body.style.overflow = "";
 }
-
 function initLightbox() {
   const lb = document.getElementById("lightbox");
   if (!lb) return;
-
   lb.addEventListener("click", (e) => {
     if (e.target === lb || e.target.classList.contains("lightbox-inner")) closeLightbox();
   });
-
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLightbox();
   });
 }
-
 function initStaticVideoPlayers() {
   document.querySelectorAll(".media-main .vp").forEach(vp => setupVideoPlayer(vp));
 }
-
 document.addEventListener("DOMContentLoaded", () => {
   initThumbNav();
   initLightbox();
   initStaticVideoPlayers();
 });
 </script>
-
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <div class="lightbox-inner">
     <button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Close image">✕</button>
@@ -873,12 +754,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="lightbox-hint">Click outside / press Esc to close</div>
   </div>
 </div>
-
 <div class="projects-wrap">
-
-  <!-- =========================
-       PROJECT: OpenGL Maze FPS
-       ========================= -->
   <section class="project-card">
     <div class="media-viewer">
       <div class="media-main">
@@ -886,7 +762,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="{{ base_path }}/images/projects/maze1.png" alt="OpenGL Maze FPS preview">
         </button>
       </div>
-
       <div class="media-thumbs-wrap">
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
@@ -895,32 +770,26 @@ document.addEventListener("DOMContentLoaded", () => {
               onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze1.png',this)">
               <img src="{{ base_path }}/images/projects/maze1.png" alt="maze1">
             </div>
-
             <div class="media-thumb"
               onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze2.png',this)">
               <img src="{{ base_path }}/images/projects/maze2.png" alt="maze2">
             </div>
-
             <div class="media-thumb"
               onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze3.png',this)">
               <img src="{{ base_path }}/images/projects/maze3.png" alt="maze3">
             </div>
-
             <div class="media-thumb"
               onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/maze4.png',this)">
               <img src="{{ base_path }}/images/projects/maze4.png" alt="maze4">
             </div>
-
             <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344915/landon_not_allowed_perlin_elwn8y.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344915/landon_not_allowed_perlin_elwn8y.jpg" alt="Perlin noise demo">
             </div>
-
             <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344916/robert_cube_short_so5lfj.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344916/robert_cube_short_so5lfj.jpg" alt="Cube demo">
             </div>
-
             <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344940/liow_sphere_wu9uio.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344940/liow_sphere_wu9uio.jpg" alt="Sphere demo">
@@ -930,15 +799,12 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </div>
-
     <div>
       <h2 class="project-title">OpenGL Maze FPS</h2>
       <p class="project-meta"><strong>Stack:</strong> C++, OpenGL, GLFW</p>
-
       <div class="project-links">
         <a href="https://github.com/ctschwandt/OpenGL-Maze-FPS" target="_blank" rel="noopener">GitHub</a>
       </div>
-
       <ul class="project-bullets">
         <li>Independently developed a 3D first-person shooter featuring procedurally generated mazes, textured geometry, dual camera modes, and animated skyboxes driven by Perlin noise and Diamond–Square fractals.</li>
         <li>Implemented core engine systems including player physics, shooting mechanics, enemy AI behaviors, and collision detection.</li>
@@ -946,10 +812,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     </div>
   </section>
-
-  <!-- =========================
-       PROJECT: MIPS Interpreter
-       ========================= -->
   <section class="project-card">
     <div class="media-viewer">
       <div class="media-main">
@@ -957,7 +819,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="{{ base_path }}/images/projects/mips1.png" alt="MIPS Interpreter preview">
         </button>
       </div>
-
       <div class="media-thumbs-wrap">
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
@@ -971,15 +832,12 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </div>
-
     <div>
       <h2 class="project-title">MIPS Assembly Interpreter</h2>
       <p class="project-meta"><strong>Stack:</strong> C++</p>
-
       <div class="project-links">
         <a href="https://github.com/ctschwandt/MIPS-Assembly-Interpreter" target="_blank" rel="noopener">GitHub</a>
       </div>
-
       <ul class="project-bullets">
         <li>Independently developed a MIPS32 assembly interpreter supporting arithmetic, memory access, labels, and control-flow instructions, and a simulated register file and memory model.</li>
         <li>Built a DFA-based lexer and custom parser to tokenize MIPS assembly, expand pseudo-instructions, and encode instructions into 32-bit MIPS machine code.</li>
@@ -987,16 +845,11 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     </div>
   </section>
-
-  <!-- =========================
-       PROJECT: Python-2 Interpreter (no images yet)
-       ========================= -->
   <section class="project-card">
     <div class="media-viewer">
       <div class="media-main">
         <div class="media-placeholder">No screenshots yet (Python-2 Interpreter)</div>
       </div>
-
       <div class="media-thumbs-wrap">
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
@@ -1010,15 +863,12 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </div>
-
     <div>
       <h2 class="project-title">Python-2 Interpreter</h2>
       <p class="project-meta"><strong>Stack:</strong> OCaml, ocamllex</p>
-
       <div class="project-links">
         <a href="https://github.com/ctschwandt/Python2-Interpreter-OCaml" target="_blank" rel="noopener">GitHub</a>
       </div>
-
       <ul class="project-bullets">
         <li>Implemented a dynamically typed Python-2 interpreter in OCaml supporting mixed-type arithmetic, variables, and assignment semantics.</li>
         <li>Built a custom lexer and recursive-descent parser to generate expression and statement ASTs for Python control-flow and blocks.</li>
@@ -1026,43 +876,32 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     </div>
   </section>
-
-  <!-- =========================
-       PROJECT: Quadtree Collision
-       ========================= -->
   <section class="project-card">
     <div class="media-viewer">
       <div class="media-main">
         <div class="vp" data-src="https://res.cloudinary.com/doojblikb/video/upload/v1771356638/quadtree1_cmpr_vrj3ls.mp4" tabindex="0">
           <video playsinline preload="metadata" autoplay></video>
-
           <div class="vp-center">
             <button class="vp-bigbtn" type="button" data-action="toggle" aria-label="Play/Pause">▶</button>
           </div>
-
           <div class="vp-ui">
             <div class="vp-top">
               <div class="vp-badge" data-el="hint" style="display:none;"></div>
             </div>
-
             <div class="vp-bottom">
               <div class="vp-progress" data-el="progress" aria-label="Seek bar" role="slider" tabindex="0">
                 <div class="vp-buffered" data-el="buffered"></div>
                 <div class="vp-played" data-el="played"></div>
                 <div class="vp-handle" data-el="handle"></div>
               </div>
-
               <div class="vp-row" style="margin-top:10px;">
                 <button class="vp-btn" type="button" data-action="toggle" aria-label="Play/Pause">▶</button>
                 <button class="vp-btn" type="button" data-action="rewind" aria-label="Rewind 10 seconds">↺</button>
-
                 <div class="vp-time" data-el="time">0:00 / 0:00</div>
-
                 <div class="vp-vol">
                   <button class="vp-btn" type="button" data-action="mute" aria-label="Mute/Unmute">🔊</button>
                   <input data-el="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
                 </div>
-
                 <button class="vp-btn" type="button" data-action="pip" aria-label="Picture in Picture">▣</button>
                 <button class="vp-btn" type="button" data-action="fs" aria-label="Fullscreen">⛶</button>
               </div>
@@ -1070,7 +909,6 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </div>
-
       <div class="media-thumbs-wrap">
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
@@ -1079,17 +917,14 @@ document.addEventListener("DOMContentLoaded", () => {
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771356638/quadtree1_cmpr_vrj3ls.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771356638/quadtree1_cmpr_vrj3ls.jpg" alt="Quadtree demo 1">
             </div>
-
             <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771356740/quadtree3_cmpr_cwelbx.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771356740/quadtree3_cmpr_cwelbx.jpg" alt="Quadtree demo 2">
             </div>
-
             <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344893/quadtree2_edit_ls4pmx.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344893/quadtree2_edit_ls4pmx.jpg" alt="Quadtree demo 3">
             </div>
-
             <div class="media-thumb"
               onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/quad2.png',this)">
               <img src="{{ base_path }}/images/projects/quad2.png" alt="quad2 image">
@@ -1099,58 +934,44 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </div>
-
     <div>
       <h2 class="project-title">Quadtree Collision</h2>
       <p class="project-meta"><strong>Stack:</strong> C++, SDL</p>
-
       <div class="project-links">
         <a href="https://github.com/ctschwandt/Quadtree-Collision" target="_blank" rel="noopener">GitHub</a>
       </div>
-
       <ul class="project-bullets">
         <li>Developed a 2D particle simulation comparing quadtree-based and brute-force collision detection for up to 1000 dynamically colliding particles.</li>
         <li>Integrated FPS benchmarking to empirically evaluate performance tradeoffs between collision methods.</li>
       </ul>
     </div>
   </section>
-
-  <!-- =========================
-       PROJECT: Galaxian Clone
-       ========================= -->
   <section class="project-card">
     <div class="media-viewer">
       <div class="media-main">
         <div class="vp" data-src="https://res.cloudinary.com/doojblikb/video/upload/v1771344886/galaxia2_edit_wwwsx5.mp4" tabindex="0">
           <video playsinline preload="metadata" autoplay></video>
-
           <div class="vp-center">
             <button class="vp-bigbtn" type="button" data-action="toggle" aria-label="Play/Pause">▶</button>
           </div>
-
           <div class="vp-ui">
             <div class="vp-top">
               <div class="vp-badge" data-el="hint" style="display:none;"></div>
             </div>
-
             <div class="vp-bottom">
               <div class="vp-progress" data-el="progress" aria-label="Seek bar" role="slider" tabindex="0">
                 <div class="vp-buffered" data-el="buffered"></div>
                 <div class="vp-played" data-el="played"></div>
                 <div class="vp-handle" data-el="handle"></div>
               </div>
-
               <div class="vp-row" style="margin-top:10px;">
                 <button class="vp-btn" type="button" data-action="toggle" aria-label="Play/Pause">▶</button>
                 <button class="vp-btn" type="button" data-action="rewind" aria-label="Rewind 10 seconds">↺</button>
-
                 <div class="vp-time" data-el="time">0:00 / 0:00</div>
-
                 <div class="vp-vol">
                   <button class="vp-btn" type="button" data-action="mute" aria-label="Mute/Unmute">🔊</button>
                   <input data-el="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
                 </div>
-
                 <button class="vp-btn" type="button" data-action="pip" aria-label="Picture in Picture">▣</button>
                 <button class="vp-btn" type="button" data-action="fs" aria-label="Fullscreen">⛶</button>
               </div>
@@ -1158,7 +979,6 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </div>
-
       <div class="media-thumbs-wrap">
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
@@ -1167,7 +987,6 @@ document.addEventListener("DOMContentLoaded", () => {
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344886/galaxia2_edit_wwwsx5.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344886/galaxia2_edit_wwwsx5.jpg" alt="Galaxian clip 1">
             </div>
-
             <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771344888/galaxia1_edit_sicies.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771344888/galaxia1_edit_sicies.jpg" alt="Galaxian clip 2">
@@ -1177,58 +996,44 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </div>
-
     <div>
       <h2 class="project-title">Galaxian Clone</h2>
       <p class="project-meta"><strong>Stack:</strong> C++, SDL</p>
-
       <div class="project-links">
         <a href="https://github.com/ctschwandt" target="_blank" rel="noopener">GitHub</a>
       </div>
-
       <ul class="project-bullets">
         <li>Built a Galaxian-style arcade shooter with classic enemy formations, projectile patterns, and scoring.</li>
         <li>Implemented game loop timing, collision detection, and responsive keyboard controls.</li>
       </ul>
     </div>
   </section>
-
-  <!-- =========================
-       PROJECT: Talbook
-       ========================= -->
   <section class="project-card">
     <div class="media-viewer">
       <div class="media-main">
         <div class="vp" data-src="https://res.cloudinary.com/doojblikb/video/upload/v1771512854/recording_2026-02-19_08.41.21_tnzo3p.mp4" tabindex="0">
           <video playsinline preload="metadata" autoplay></video>
-
           <div class="vp-center">
             <button class="vp-bigbtn" type="button" data-action="toggle" aria-label="Play/Pause">▶</button>
           </div>
-
           <div class="vp-ui">
             <div class="vp-top">
               <div class="vp-badge" data-el="hint" style="display:none;"></div>
             </div>
-
             <div class="vp-bottom">
               <div class="vp-progress" data-el="progress" aria-label="Seek bar" role="slider" tabindex="0">
                 <div class="vp-buffered" data-el="buffered"></div>
                 <div class="vp-played" data-el="played"></div>
                 <div class="vp-handle" data-el="handle"></div>
               </div>
-
               <div class="vp-row" style="margin-top:10px;">
                 <button class="vp-btn" type="button" data-action="toggle" aria-label="Play/Pause">▶</button>
                 <button class="vp-btn" type="button" data-action="rewind" aria-label="Rewind 10 seconds">↺</button>
-
                 <div class="vp-time" data-el="time">0:00 / 0:00</div>
-
                 <div class="vp-vol">
                   <button class="vp-btn" type="button" data-action="mute" aria-label="Mute/Unmute">🔊</button>
                   <input data-el="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
                 </div>
-
                 <button class="vp-btn" type="button" data-action="pip" aria-label="Picture in Picture">▣</button>
                 <button class="vp-btn" type="button" data-action="fs" aria-label="Fullscreen">⛶</button>
               </div>
@@ -1236,7 +1041,6 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </div>
-
       <div class="media-thumbs-wrap">
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
@@ -1245,17 +1049,14 @@ document.addEventListener("DOMContentLoaded", () => {
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771512854/recording_2026-02-19_08.41.21_tnzo3p.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771512854/recording_2026-02-19_08.41.21_tnzo3p.jpg" alt="Talbook clip 1">
             </div>
-
             <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771512854/recording_2026-02-19_08.47.04_a0wm7v.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771512854/recording_2026-02-19_08.47.04_a0wm7v.jpg" alt="Talbook clip 2">
             </div>
-
             <div class="media-thumb video"
               onclick="switchMedia(this.closest('.media-viewer'),'video','https://res.cloudinary.com/doojblikb/video/upload/v1771512854/recording_2026-02-19_08.52.43_b97n3w.mp4',this)">
               <img src="https://res.cloudinary.com/doojblikb/video/upload/so_0,du_1,w_240,f_jpg/v1771512854/recording_2026-02-19_08.52.43_b97n3w.jpg" alt="Talbook clip 3">
             </div>
-
             <div class="media-thumb"
               onclick="switchMedia(this.closest('.media-viewer'),'image','{{ base_path }}/images/projects/talbook4.png',this)">
               <img src="{{ base_path }}/images/projects/talbook4.png" alt="Talbook screenshot">
@@ -1265,26 +1066,19 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </div>
-
     <div>
       <h2 class="project-title">Talbook</h2>
       <p class="project-meta"><strong>Stack:</strong> Python, Flask, MySQL, HTML/CSS</p>
-
       <div class="project-links">
         <a href="https://talbook.pythonanywhere.com/" target="_blank" rel="noopener">Live Site</a>
         <a href="https://github.com/OladayoOyedeji/Talbook" target="_blank" rel="noopener">GitHub</a>
       </div>
-
       <ul class="project-bullets">
         <li>Co-developed a marketplace-style web application for music gear, implementing core features including listings, user feeds, and direct messaging.</li>
         <li>Designed and integrated a relational MySQL schema supporting users, items, posts, messaging, and search functionality.</li>
       </ul>
     </div>
   </section>
-
-  <!-- =========================
-       PROJECT: Othello (JavaFX)
-       ========================= -->
   <section class="project-card">
     <div class="media-viewer">
       <div class="media-main">
@@ -1292,7 +1086,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="{{ base_path }}/images/projects/java_othello1.png" alt="Othello (JavaFX) preview">
         </button>
       </div>
-
       <div class="media-thumbs-wrap">
         <div class="media-thumbs-bar">
           <button class="thumb-nav left" onclick="scrollThumbs(this,-1)" aria-label="Scroll thumbnails left">‹</button>
@@ -1306,15 +1099,12 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </div>
-
     <div>
       <h2 class="project-title">Othello (JavaFX)</h2>
       <p class="project-meta"><strong>Stack:</strong> Java, JavaFX</p>
-
       <div class="project-links">
         <a href="https://github.com/ctschwandt/JavaFX-Othello" target="_blank" rel="noopener">GitHub</a>
       </div>
-
       <ul class="project-bullets">
         <li>Built a JavaFX implementation of Othello with configurable board sizes, a setup mode for custom starting positions, and a responsive resizable UI.</li>
         <li>Implemented fully enforced game rules including legal move detection, piece flipping, turn progression, and end-game scoring.</li>
@@ -1322,11 +1112,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     </div>
   </section>
-
   <section class="projects-footer">
     <strong>Additional Projects:</strong>
     Procedural Terrain Generator (OpenGL), Mandelbrot Fractal (OpenGL), IMDb Database Clone (SQL),
     Multithreaded Webscraper for Cryptanalysis (Python), Tic-Tac-Toe (MIPS Assembly)
   </section>
-
 </div>
