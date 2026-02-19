@@ -15,7 +15,7 @@ author_profile: true
 
 .project-card {
   display: grid;
-  grid-template-columns: 440px 1fr; /* bigger media column */
+  grid-template-columns: 440px 1fr;
   gap: 24px;
   align-items: start;
   padding: 18px;
@@ -26,23 +26,18 @@ author_profile: true
   background: var(--global-bg-color, #111);
 }
 
-/* =====================
-   MEDIA VIEWER
-   ===================== */
-
 .media-viewer { width: 100%; }
 
 .media-main {
   width: 100%;
-  aspect-ratio: 4 / 3; /* bigger/taller box */
+  aspect-ratio: 4 / 3;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--global-border-color, rgba(255,255,255,0.15));
   margin-bottom: 10px;
-  background: #000; /* clean letterbox */
+  background: #000;
 }
 
-/* Images: crops if needed */
 .media-main img {
   width: 100%;
   height: 100%;
@@ -50,7 +45,6 @@ author_profile: true
   display: block;
 }
 
-/* Clickable main image (button fills box) */
 .media-main button.img-open {
   all: unset;
   display: block;
@@ -59,17 +53,12 @@ author_profile: true
   cursor: zoom-in;
 }
 
-/* Videos: do NOT crop/stretch */
 .media-main video {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
 }
-
-/* =====================
-   PRO VIDEO PLAYER
-   ===================== */
 
 .vp {
   position: relative;
@@ -85,11 +74,9 @@ author_profile: true
   display: block;
 }
 
-/* hide native controls (we render our own) */
 .vp video::-webkit-media-controls { display: none !important; }
 .vp video::-webkit-media-controls-enclosure { display: none !important; }
 
-/* overlay controls */
 .vp-ui {
   position: absolute;
   inset: 0;
@@ -116,7 +103,6 @@ author_profile: true
   background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.18), rgba(0,0,0,0.00));
 }
 
-/* make control row compact + never bleed */
 .vp-row {
   display: flex;
   align-items: center;
@@ -153,7 +139,7 @@ author_profile: true
   box-shadow: 0 12px 40px rgba(0,0,0,0.45);
   transition: 0.15s ease;
   font-size: 18px;
-  line-height: 1; /* prevents glyph bleed */
+  line-height: 1;
   padding: 0;
 }
 .vp-bigbtn:hover { transform: scale(1.03); background: rgba(0,0,0,0.68); }
@@ -173,7 +159,7 @@ author_profile: true
   transition: 0.15s ease;
   pointer-events: auto;
   font-size: 14px;
-  line-height: 1; /* prevents pause bleeding outside */
+  line-height: 1;
   padding: 0;
 }
 .vp-btn:hover { background: rgba(0,0,0,0.62); }
@@ -189,7 +175,6 @@ author_profile: true
   text-overflow: ellipsis;
 }
 
-/* progress bar */
 .vp-progress {
   position: relative;
   height: 6px;
@@ -214,7 +199,6 @@ author_profile: true
   background: rgba(255,255,255,0.18);
 }
 
-/* scrub handle */
 .vp-progress .vp-handle {
   position: absolute;
   top: 50%;
@@ -230,7 +214,6 @@ author_profile: true
 }
 .vp:hover .vp-progress .vp-handle { opacity: 1; }
 
-/* volume (custom range so the track matches perfectly) */
 .vp-vol {
   display: flex;
   align-items: center;
@@ -241,12 +224,12 @@ author_profile: true
 .vp-vol input[type="range"]{
   -webkit-appearance: none;
   appearance: none;
-  width: 86px;           /* set exact width */
+  width: 86px;
   height: 6px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.18); /* replaced in JS with gradient fill */
+  background: rgba(255,255,255,0.18);
   outline: none;
-  margin: 0;             /* prevents extra track space */
+  margin: 0;
   padding: 0;
 }
 .vp-vol input[type="range"]::-webkit-slider-runnable-track{
@@ -262,7 +245,7 @@ author_profile: true
   border-radius: 999px;
   background: rgba(255,255,255,0.92);
   border: 1px solid rgba(0,0,0,0.30);
-  margin-top: -3px; /* centers thumb on 6px track */
+  margin-top: -3px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.45);
 }
 .vp-vol input[type="range"]::-moz-range-track{
@@ -284,7 +267,6 @@ author_profile: true
   box-shadow: 0 4px 18px rgba(0,0,0,0.45);
 }
 
-/* small helper tooltip */
 .vp-badge {
   pointer-events: auto;
   user-select: none;
@@ -297,11 +279,8 @@ author_profile: true
   backdrop-filter: blur(6px);
 }
 
-/* ===== Thumbs row + nice scrolling (fixed alignment) ===== */
-
 .media-thumbs-wrap { position: relative; }
 
-/* the grey bar container */
 .media-thumbs-bar {
   position: relative;
   border-radius: 12px;
@@ -311,7 +290,6 @@ author_profile: true
   overflow: hidden;
 }
 
-/* scrolling strip */
 .media-thumbs {
   display: flex;
   gap: 8px;
@@ -325,7 +303,6 @@ author_profile: true
 }
 .media-thumbs::-webkit-scrollbar { display: none; }
 
-/* subtle fade edges inside the bar */
 .media-thumbs-bar::before,
 .media-thumbs-bar::after {
   content: "";
@@ -345,7 +322,6 @@ author_profile: true
   background: linear-gradient(to left, rgba(17,17,17,0.95), rgba(17,17,17,0));
 }
 
-/* arrow buttons float ON TOP of the bar */
 .thumb-nav {
   position: absolute;
   top: 50%;
@@ -392,10 +368,6 @@ author_profile: true
 
 .media-thumb.active { border-color: var(--global-base-color); }
 
-/* =====================
-   VIDEO THUMB MARKER
-   ===================== */
-
 .media-thumb.video { position: relative; }
 
 .media-thumb.video::after {
@@ -430,7 +402,6 @@ author_profile: true
   pointer-events: none;
 }
 
-/* Placeholder */
 .media-placeholder {
   width: 100%;
   height: 100%;
@@ -453,10 +424,6 @@ author_profile: true
   font-size: 0.75rem;
   text-align: center;
 }
-
-/* =====================
-   LIGHTBOX (popup full image)
-   ===================== */
 
 .lightbox {
   position: fixed;
@@ -517,10 +484,6 @@ author_profile: true
   padding: 6px 10px;
 }
 
-/* =====================
-   TEXT SIDE
-   ===================== */
-
 .project-title {
   margin: 0 0 6px 0;
   font-size: 1.4rem;
@@ -551,12 +514,10 @@ author_profile: true
 
 @media (max-width: 900px) {
   .project-card { grid-template-columns: 1fr; }
-  .media-main { aspect-ratio: 16 / 10; } /* better on mobile */
-}
+  .media-main { aspect-ratio: 16 / 10; }
 </style>
 
 <script>
-/* ---------- utils ---------- */
 function clamp(n, a, b) { return Math.min(b, Math.max(a, n)); }
 
 function formatTime(sec) {
@@ -569,7 +530,6 @@ function formatTime(sec) {
 }
 
 function setRangeFill(rangeEl, pct) {
-  // pct: 0..100
   rangeEl.style.background =
     `linear-gradient(to right,
       var(--global-base-color) 0%,
@@ -578,7 +538,6 @@ function setRangeFill(rangeEl, pct) {
       rgba(255,255,255,0.18) 100%)`;
 }
 
-/* ---------- pro video player (custom UI) ---------- */
 function videoPlayerMarkup(src, autoplay=true) {
   const auto = autoplay ? "autoplay" : "";
   return `
@@ -806,7 +765,6 @@ function setupVideoPlayer(vp) {
   showUI();
 }
 
-/* ---------- media switching ---------- */
 function switchMedia(container, type, src, thumb) {
   const main = container.querySelector(".media-main");
   main.innerHTML = "";
@@ -828,7 +786,6 @@ function switchMedia(container, type, src, thumb) {
   thumb.classList.add("active");
 }
 
-/* ---------- thumbs scroller ---------- */
 function scrollThumbs(btn, dir) {
   const wrap = btn.closest(".media-thumbs-wrap");
   const row = wrap.querySelector(".media-thumbs");
@@ -869,7 +826,6 @@ function initThumbNav() {
   });
 }
 
-/* ---------- lightbox ---------- */
 function openLightbox(src) {
   const lb = document.getElementById("lightbox");
   const img = document.getElementById("lightboxImg");
@@ -899,7 +855,6 @@ function initLightbox() {
   });
 }
 
-/* ---------- init any static players on load ---------- */
 function initStaticVideoPlayers() {
   document.querySelectorAll(".media-main .vp").forEach(vp => setupVideoPlayer(vp));
 }
@@ -911,7 +866,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- LIGHTBOX DOM (one per page) -->
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <div class="lightbox-inner">
     <button class="lightbox-close" type="button" onclick="closeLightbox()" aria-label="Close image">✕</button>
