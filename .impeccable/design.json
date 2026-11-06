@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T21:32:17.878Z",
+  "title": "Design System: Cole Schwandt’s portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Quiet Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0015 121.56)",
+          "oklch(26% 0.0027 121.56)",
+          "oklch(38% 0.0039 121.56)",
+          "oklch(49% 0.0041 121.56)",
+          "oklch(61% 0.0041 121.56)",
+          "oklch(72% 0.0041 121.56)",
+          "oklch(84% 0.0026 121.56)",
+          "oklch(95% 0.0008 121.56)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Recessed Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0028 132.42)",
+          "oklch(26% 0.0048 132.42)",
+          "oklch(38% 0.0070 132.42)",
+          "oklch(49% 0.0074 132.42)",
+          "oklch(61% 0.0074 132.42)",
+          "oklch(72% 0.0074 132.42)",
+          "oklch(84% 0.0047 132.42)",
+          "oklch(95% 0.0015 132.42)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Charcoal Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0058 160.95)",
+          "oklch(26% 0.0100 160.95)",
+          "oklch(38% 0.0147 160.95)",
+          "oklch(49% 0.0154 160.95)",
+          "oklch(61% 0.0154 160.95)",
+          "oklch(72% 0.0154 160.95)",
+          "oklch(84% 0.0099 160.95)",
+          "oklch(95% 0.0031 160.95)"
+        ]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0069 154.07)",
+          "oklch(26% 0.0120 154.07)",
+          "oklch(38% 0.0176 154.07)",
+          "oklch(49% 0.0185 154.07)",
+          "oklch(61% 0.0185 154.07)",
+          "oklch(72% 0.0185 154.07)",
+          "oklch(84% 0.0118 154.07)",
+          "oklch(95% 0.0037 154.07)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Muted Forest Green",
+        "tonalRamp": [
+          "oklch(15% 0.0250 163.13)",
+          "oklch(26% 0.0434 163.13)",
+          "oklch(38% 0.0634 163.13)",
+          "oklch(49% 0.0667 163.13)",
+          "oklch(61% 0.0667 163.13)",
+          "oklch(72% 0.0667 163.13)",
+          "oklch(84% 0.0427 163.13)",
+          "oklch(95% 0.0133 163.13)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Forest Green Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0187 163.84)",
+          "oklch(26% 0.0325 163.84)",
+          "oklch(38% 0.0475 163.84)",
+          "oklch(49% 0.0500 163.84)",
+          "oklch(61% 0.0500 163.84)",
+          "oklch(72% 0.0500 163.84)",
+          "oklch(84% 0.0320 163.84)",
+          "oklch(95% 0.0100 163.84)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline Green-Gray",
+        "tonalRamp": [
+          "oklch(15% 0.0056 142.22)",
+          "oklch(26% 0.0097 142.22)",
+          "oklch(38% 0.0142 142.22)",
+          "oklch(49% 0.0150 142.22)",
+          "oklch(61% 0.0150 142.22)",
+          "oklch(72% 0.0150 142.22)",
+          "oklch(84% 0.0096 142.22)",
+          "oklch(95% 0.0030 142.22)"
+        ]
+      },
+      "selection": {
+        "role": "primary",
+        "displayName": "Selection Green",
+        "tonalRamp": [
+          "oklch(15% 0.0095 149.06)",
+          "oklch(26% 0.0166 149.06)",
+          "oklch(38% 0.0242 149.06)",
+          "oklch(49% 0.0255 149.06)",
+          "oklch(61% 0.0255 149.06)",
+          "oklch(72% 0.0255 149.06)",
+          "oklch(84% 0.0163 149.06)",
+          "oklch(95% 0.0051 149.06)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Green",
+        "tonalRamp": [
+          "oklch(15% 0.0307 163.87)",
+          "oklch(26% 0.0532 163.87)",
+          "oklch(38% 0.0777 163.87)",
+          "oklch(49% 0.0818 163.87)",
+          "oklch(61% 0.0818 163.87)",
+          "oklch(72% 0.0818 163.87)",
+          "oklch(84% 0.0524 163.87)",
+          "oklch(95% 0.0164 163.87)"
+        ]
+      },
+      "dark-paper": {
+        "role": "neutral",
+        "displayName": "Dark Quiet Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0052 163.59)",
+          "oklch(26% 0.0089 163.59)",
+          "oklch(38% 0.0131 163.59)",
+          "oklch(49% 0.0137 163.59)",
+          "oklch(61% 0.0137 163.59)",
+          "oklch(72% 0.0137 163.59)",
+          "oklch(84% 0.0088 163.59)",
+          "oklch(95% 0.0027 163.59)"
+        ]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Dark Recessed Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0066 158.79)",
+          "oklch(26% 0.0114 158.79)",
+          "oklch(38% 0.0166 158.79)",
+          "oklch(49% 0.0175 158.79)",
+          "oklch(61% 0.0175 158.79)",
+          "oklch(72% 0.0175 158.79)",
+          "oklch(84% 0.0112 158.79)",
+          "oklch(95% 0.0035 158.79)"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark Charcoal Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0036 140.52)",
+          "oklch(26% 0.0062 140.52)",
+          "oklch(38% 0.0091 140.52)",
+          "oklch(49% 0.0096 140.52)",
+          "oklch(61% 0.0096 140.52)",
+          "oklch(72% 0.0096 140.52)",
+          "oklch(84% 0.0061 140.52)",
+          "oklch(95% 0.0019 140.52)"
+        ]
+      },
+      "dark-secondary": {
+        "role": "neutral",
+        "displayName": "Dark Secondary Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0085 149.63)",
+          "oklch(26% 0.0148 149.63)",
+          "oklch(38% 0.0216 149.63)",
+          "oklch(49% 0.0228 149.63)",
+          "oklch(61% 0.0228 149.63)",
+          "oklch(72% 0.0228 149.63)",
+          "oklch(84% 0.0146 149.63)",
+          "oklch(95% 0.0046 149.63)"
+        ]
+      },
+      "dark-accent": {
+        "role": "primary",
+        "displayName": "Dark Muted Forest Green",
+        "tonalRamp": [
+          "oklch(15% 0.0227 158.42)",
+          "oklch(26% 0.0393 158.42)",
+          "oklch(38% 0.0575 158.42)",
+          "oklch(49% 0.0605 158.42)",
+          "oklch(61% 0.0605 158.42)",
+          "oklch(72% 0.0605 158.42)",
+          "oklch(84% 0.0387 158.42)",
+          "oklch(95% 0.0121 158.42)"
+        ]
+      },
+      "dark-accent-hover": {
+        "role": "primary",
+        "displayName": "Dark Forest Green Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0140 156.40)",
+          "oklch(26% 0.0243 156.40)",
+          "oklch(38% 0.0355 156.40)",
+          "oklch(49% 0.0374 156.40)",
+          "oklch(61% 0.0374 156.40)",
+          "oklch(72% 0.0374 156.40)",
+          "oklch(84% 0.0239 156.40)",
+          "oklch(95% 0.0075 156.40)"
+        ]
+      },
+      "dark-line": {
+        "role": "neutral",
+        "displayName": "Dark Hairline Green-Gray",
+        "tonalRamp": [
+          "oklch(15% 0.0083 155.15)",
+          "oklch(26% 0.0143 155.15)",
+          "oklch(38% 0.0209 155.15)",
+          "oklch(49% 0.0220 155.15)",
+          "oklch(61% 0.0220 155.15)",
+          "oklch(72% 0.0220 155.15)",
+          "oklch(84% 0.0141 155.15)",
+          "oklch(95% 0.0044 155.15)"
+        ]
+      },
+      "dark-selection": {
+        "role": "primary",
+        "displayName": "Dark Selection Green",
+        "tonalRamp": [
+          "oklch(15% 0.0204 157.60)",
+          "oklch(26% 0.0354 157.60)",
+          "oklch(38% 0.0517 157.60)",
+          "oklch(49% 0.0545 157.60)",
+          "oklch(61% 0.0545 157.60)",
+          "oklch(72% 0.0545 157.60)",
+          "oklch(84% 0.0349 157.60)",
+          "oklch(95% 0.0109 157.60)"
+        ]
+      },
+      "dark-focus": {
+        "role": "primary",
+        "displayName": "Dark Focus Green",
+        "tonalRamp": [
+          "oklch(15% 0.0227 158.42)",
+          "oklch(26% 0.0393 158.42)",
+          "oklch(38% 0.0575 158.42)",
+          "oklch(49% 0.0605 158.42)",
+          "oklch(61% 0.0605 158.42)",
+          "oklch(72% 0.0605 158.42)",
+          "oklch(84% 0.0387 158.42)",
+          "oklch(95% 0.0121 158.42)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Default page heading; narrow layouts supply the documented overrides."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Default section heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project and research headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default prose font."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Page introductions and project summaries."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Technology metadata, footer text and its native appearance selector."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Figure captions with tighter leading."
+      },
+      "navigation": {
+        "displayName": "Navigation",
+        "purpose": "Main navigation links."
+      },
+      "component-label": {
+        "displayName": "Component Label",
+        "purpose": "Supporting notes, dates, small actions and the dialog close control."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Standalone semibold text actions; listing contexts use regular weight."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "medium",
+        "value": "1000px"
+      },
+      {
+        "name": "narrow",
+        "value": "720px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Text link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Compact semibold action with the shipped inline arrow.",
+      "html": "<a class=\"ds-text-link\" href=\"#project\">Read project<svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;gap:.5rem;align-items:center;color:var(--accent,#285b45);font-family:var(--sans,'Source Sans 3','Segoe UI',sans-serif);font-size:1.0625rem;line-height:1.6;font-weight:600;text-decoration:none;text-decoration-thickness:1px;text-underline-offset:.2em;overflow-wrap:anywhere}.ds-text-link svg{flex-shrink:0}.ds-text-link:hover{color:var(--accent-hover,#173b2c);text-decoration:underline;text-decoration-thickness:2px}.ds-text-link:focus-visible{outline:2px solid var(--focus,#276b50);outline-offset:5px}"
+    },
+    {
+      "name": "Appearance selector",
+      "kind": "input",
+      "refersTo": "native-select",
+      "description": "Labeled native selector for System, Light and Dark appearances; the app persists its selected preference.",
+      "html": "<div class=\"ds-theme\"><label for=\"ds-appearance\">Appearance</label><select id=\"ds-appearance\"><option>System</option><option>Light</option><option>Dark</option></select></div>",
+      "css": ".ds-theme{display:flex;gap:.6rem;align-items:center;color:var(--secondary,#59645c);font-family:var(--sans,'Source Sans 3','Segoe UI',sans-serif);font-size:.875rem;line-height:1.6}.ds-theme select{font:inherit;color:var(--secondary,#59645c);background:var(--paper,#f7f8f5);border:1px solid var(--line,#cdd5cc);border-radius:0;padding:.3rem 1.5rem .3rem .5rem;min-height:38px}.ds-theme select:focus-visible{outline:2px solid var(--focus,#276b50);outline-offset:5px}"
+    },
+    {
+      "name": "Main navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Visible text navigation with green current-page underline and compact narrow-screen layout.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><ul><li><a href=\"#about\" aria-current=\"page\">About</a></li><li><a href=\"#projects\">Projects</a></li><li><a href=\"#experience\">Experience</a></li><li><a href=\"#skills\">Skills</a></li></ul></nav>",
+      "css": ".ds-nav{font-family:var(--sans,'Source Sans 3','Segoe UI',sans-serif);line-height:1.6}.ds-nav ul{list-style:none;display:flex;gap:1.75rem;padding:0;margin:0;align-items:center}.ds-nav li{margin:0}.ds-nav a{color:var(--secondary,#59645c);display:inline-block;padding-block:.6rem;text-decoration:none;font-size:1rem;overflow-wrap:anywhere}.ds-nav a:hover,.ds-nav a[aria-current=\"page\"]{color:var(--accent,#285b45)}.ds-nav a[aria-current=\"page\"]{text-decoration:underline;text-underline-offset:.6rem;text-decoration-thickness:1px}.ds-nav a:focus-visible{outline:2px solid var(--focus,#276b50);outline-offset:5px}@media(max-width:720px){.ds-nav{width:100%}.ds-nav ul{justify-content:space-between;gap:.75rem}.ds-nav a{font-size:.9375rem;padding-block:.5rem}}"
+    },
+    {
+      "name": "Technology list",
+      "kind": "custom",
+      "refersTo": "technology-list",
+      "description": "Plain wrapping technology metadata; list items are text rather than interactive chips.",
+      "html": "<ul class=\"ds-technologies\" aria-label=\"Technologies\"><li>C++</li><li>OpenGL</li><li>Procedural generation</li></ul>",
+      "css": ".ds-technologies{list-style:none;display:flex;flex-wrap:wrap;gap:.15rem 1rem;padding:0;margin:0;color:var(--secondary,#59645c);font-family:var(--sans,'Source Sans 3','Segoe UI',sans-serif);font-size:.875rem;line-height:1.6}.ds-technologies li{margin:0}"
+    },
+    {
+      "name": "Project row",
+      "kind": "custom",
+      "refersTo": "project-entry",
+      "description": "An open project article separated by a thin rule, with readable summary and direct links.",
+      "html": "<article class=\"ds-project\"><h3><a href=\"#terrain\">Procedural Terrain Generator</a></h3><ul aria-label=\"Technologies\"><li>C++</li><li>OpenGL</li></ul><p>Procedural terrain generation and rendering.</p><div><a class=\"ds-project-read\" href=\"#terrain\">Read project<svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a><a href=\"#source\">Source code</a></div></article>",
+      "css": ".ds-project{padding-block:1.5rem;border-bottom:1px solid var(--line,#cdd5cc);color:var(--ink,#242d28);font-family:var(--sans,'Source Sans 3','Segoe UI',sans-serif);font-size:1.0625rem;line-height:1.6}.ds-project h3{margin:0 0 .5rem;font-family:var(--serif,'Source Serif 4',Georgia,serif);font-weight:400;font-size:1.5rem;line-height:1.2;letter-spacing:-.01em;text-wrap:balance}.ds-project h3 a{color:var(--ink,#242d28);text-decoration:none}.ds-project h3 a:hover{color:var(--accent,#285b45);text-decoration:underline}.ds-project ul{list-style:none;display:flex;flex-wrap:wrap;gap:.15rem 1rem;padding:0;margin:0;color:var(--secondary,#59645c);font-size:.875rem}.ds-project li{margin:0}.ds-project p{max-width:var(--reading-width,70ch);margin:.65rem 0 .75rem}.ds-project div{display:flex;gap:.5rem 1.25rem;flex-wrap:wrap;font-size:.9375rem}.ds-project a{color:var(--accent,#285b45);text-decoration-thickness:1px;text-underline-offset:.2em;overflow-wrap:anywhere}.ds-project a:hover{color:var(--accent-hover,#173b2c);text-decoration-thickness:2px}.ds-project a:focus-visible{outline:2px solid var(--focus,#276b50);outline-offset:5px}@media(max-width:720px){.ds-project{padding-block:1.25rem}.ds-project h3{font-size:1.375rem}}.ds-project .ds-project-read{display:inline-flex;gap:.5rem;align-items:center;text-decoration:none;font-weight:400}.ds-project .ds-project-read:hover{text-decoration:underline}.ds-project .ds-project-read svg{flex-shrink:0}.ds-project div>a:not(.ds-project-read){color:var(--secondary,#59645c)}"
+    },
+    {
+      "name": "Close image button",
+      "kind": "button",
+      "refersTo": "dialog-close",
+      "description": "Transparent text button with a native target size and the shipped inline close mark; focus is its custom visual state.",
+      "html": "<button type=\"button\" class=\"ds-close\">Close image<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"m4 4 8 8M12 4l-8 8\" stroke=\"currentColor\" stroke-width=\"1.4\"/></svg></button>",
+      "css": ".ds-close{background:transparent;border:0;color:var(--ink,#242d28);display:flex;gap:.6rem;align-items:center;justify-content:center;min-height:44px;margin-left:auto;margin-bottom:.5rem;padding:.5rem;font-family:var(--sans,'Source Sans 3','Segoe UI',sans-serif);font-size:.9375rem;line-height:1.6;cursor:pointer}.ds-close svg{flex-shrink:0}.ds-close:focus-visible{outline:2px solid var(--focus,#276b50);outline-offset:5px}"
+    },
+    {
+      "name": "Media error message",
+      "kind": "custom",
+      "refersTo": "media-error",
+      "description": "A calm status message preserves a direct media-file link when an embedded demonstration fails.",
+      "html": "<p class=\"ds-media-error\" role=\"status\">This demonstration could not be loaded. <a href=\"#video\">Open the original video file</a> to try it directly.</p>",
+      "css": ".ds-media-error{padding:1rem;border:1px solid var(--line,#cdd5cc);color:var(--ink,#242d28);background:var(--surface,#edf0eb);font-family:var(--sans,'Source Sans 3','Segoe UI',sans-serif);font-size:1.0625rem;line-height:1.6;margin:0 0 1rem}.ds-media-error a{color:var(--accent,#285b45);text-decoration-thickness:1px;text-underline-offset:.2em;overflow-wrap:anywhere}.ds-media-error a:hover{color:var(--accent-hover,#173b2c);text-decoration-thickness:2px}.ds-media-error a:focus-visible{outline:2px solid var(--focus,#276b50);outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A personal technical report",
+    "overview": "The portfolio uses the calm, readable character of a university faculty page and technical publication. Real work, precise descriptions and direct links carry the presentation. Serif headings establish the document hierarchy; sans-serif prose and aligned metadata keep it easy to scan.\n\nThe interface is restrained and professional. Neutral paper, charcoal ink, a single muted green accent and thin dividing rules support compact content. Native controls and ordinary browser navigation preserve familiar reading and interaction behavior across light and dark appearances.",
+    "keyCharacteristics": [
+      "Scholarly serif headings and readable sans-serif prose.",
+      "One muted green accent with semantic light and dark counterparts.",
+      "Flat, open sections separated by thin rules.",
+      "Compact metadata, direct links and native controls.",
+      "Responsive reading columns and visible keyboard focus."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Use green to identify interaction and state; keep prose, metadata and structural rules in their neutral roles.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Hierarchy Rule",
+        "body": "Use serif type for document headings and sans-serif type for prose, metadata and controls; use size and spacing before adding weight.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Document Rule",
+        "body": "Use rules, whitespace and surface tone to establish structure; reserve the modal layer for enlarged project media.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep headings scholarly, prose readable and metadata compact.",
+      "Do preserve semantic light and dark color roles and the shared visible focus treatment.",
+      "Do use thin rules, whitespace and aligned columns to organize substantive content.",
+      "Do retain native controls, direct media-file links and responsive reading widths."
+    ],
+    "donts": [
+      "Don't add an oversized marketing hero, decorative effects or animation spectacle.",
+      "Don't turn technology metadata into skill scores or decorative badges.",
+      "Don't replace open content rows with ornamental card elevation.",
+      "Don't use system display faces or glyph characters in place of the shipped serif headings and inline SVG controls."
+    ]
+  }
+}

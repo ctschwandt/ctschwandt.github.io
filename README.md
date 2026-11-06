@@ -1,96 +1,216 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# Cole Schwandt’s portfolio
 
-![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
+A content-driven portfolio built with React, TypeScript, and Vite for [ctschwandt.github.io](https://ctschwandt.github.io/). Projects live in Markdown; biography, experience, skills, and links live in JSON. The production build generates a complete HTML document for every page.
 
-# Getting Started
+## Develop locally
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+Use Node.js **22.12 or newer** and npm. Ruby, Bundler, and Jekyll are no longer needed. From the repository root:
 
-See more info at https://academicpages.github.io/
-
-## Running locally
-
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try run `sudo apt install ruby-dev ruby-bundler nodejs` again.
-
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
-
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change to Markdown (*.md) and HTML files, while changes to the core template and configuration (i.e., `_config.yml`) will require stoping and restarting Jekyll.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
-
-```bash
-chmod -R 777 .
-docker compose up
+```sh
+npm ci
+npm run dev
 ```
 
-You should now be able to access the website from `localhost:4000`.
+Vite prints the local server address. Content changes reload the page. Use `npm install` when intentionally changing dependencies and commit both `package.json` and `package-lock.json`; use `npm ci` for normal setup and CI.
 
-### Using the DevContainer in VS Code
+```sh
+npm run typecheck       # TypeScript validation
+npm run check:content   # Validate Markdown, JSON, URLs, and local media
+npm run build           # Typecheck, generate static pages, and check the output
+npm run check:site      # Recheck an existing dist/ build
+npm run preview        # Serve the production build
+```
 
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development container configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
+`npm test` runs content validation. For browser checks, install Playwright’s Chromium once with `npx playwright install chromium`, then run `npm run test:browser`. On Linux, Playwright may also require its documented browser system dependencies. Browser checks are separate from the production build.
 
-# Maintenance
+`check:site` checks generated routes, local links and fragments, assets, metadata, sitemap entries, and accidental template content. It does **not** establish external website or video availability.
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+## Where to edit content
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+| Change | Location |
+| --- | --- |
+| Projects | `src/content/projects/*.md` |
+| Biography, education, social links, development setup | `src/content/profile.json` |
+| Work and research experience | `src/content/experience.json` |
+| Skills | `src/content/skills.json` |
+| Navigation | `src/content/navigation.json` |
+| Images, videos, résumé | `public/` |
+| Typography, colors, spacing, responsive styles | `src/styles/main.css` |
 
-## Bugfixes and enhancements
+Keep claims factual. The five brief additional projects intentionally remain short because the old site supplied no further implementation details. See [the migration record](docs/content-migration.md) for provenance and known gaps.
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+## Add a project
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+1. Create `src/content/projects/my-project.md`. Use lowercase words separated by hyphens; the filename becomes `/projects/my-project/`.
+2. Add YAML front matter and a nonempty Markdown description.
+3. Add optional media under `public/` or use HTTPS media URLs.
+4. Run `npm run build`, inspect the result, and commit the content and assets.
 
+The build discovers project files automatically. An ordinary new project requires no JSX, routing, CSS, or configuration edits. A minimal file is:
+
+```md
 ---
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+title: My project
+summary: A concise, factual description of what I implemented.
+---
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+## Implementation
+
+Describe the problem, your contribution, and the technical details worth exploring.
+```
+
+This complete example demonstrates every supported metadata field. Its paths and URLs are illustrative; replace them with actual files and destinations before adding it to the content directory.
+
+```md
+---
+title: My project
+summary: A concise description of the project and my contribution.
+technologies:
+  - C++
+  - OpenGL
+year: "2026"
+order: 80
+featured: false
+github: https://github.com/your-account/your-project
+demo: https://your-project.example.com/
+images:
+  - src: /images/projects/my-project.png
+    alt: A description of the information visible in the screenshot
+    caption: An optional explanation of the screenshot.
+videos:
+  - src: /videos/my-project.mp4
+    poster: /images/projects/my-project-poster.jpg
+    caption: A demonstration of the implemented behavior.
+links:
+  - label: Technical notes
+    url: https://your-site.example.com/notes/
+---
+
+## Overview
+
+Explain what the project does and why it is technically interesting.
+
+## Implementation
+
+- Describe what you personally implemented.
+- Explain a supported technical decision.
+
+## Limitations
+
+State relevant limitations without inventing results or measurements.
+```
+
+| Field | Meaning and default |
+| --- | --- |
+| `title` | Required nonempty project name. |
+| `summary` | Required nonempty summary for listings and page metadata. |
+| `technologies` | Optional string list; defaults to `[]`. |
+| `year` | Optional display label, quoted string or number. Omit when unknown. |
+| `order` | Optional finite number; defaults to `100`. Lower values appear first; ties sort by title. |
+| `featured` | Optional boolean; defaults to `false`. Marks a project for the homepage selection. |
+| `github` | Optional HTTPS source repository URL. |
+| `demo` | Optional HTTPS demonstration URL. |
+| `images` | Optional `{src, alt, caption?}` list. Nonempty alternative text is required; captions are optional. |
+| `videos` | Optional `{src, poster?, caption}` list. Descriptive captions are required; posters are optional. |
+| `links` | Optional `{label, url}` list for additional HTTPS or root-relative destinations. |
+
+Only `title`, `summary`, and a Markdown body are required. Lists default to empty. A text-only project has a complete layout; never insert empty URLs or placeholder media to satisfy optional fields. Validation errors identify the file and field.
+
+Start body headings at `##`; the page supplies its own `h1`. Standard paragraphs, lists, links, code blocks, and tables are supported. Raw HTML is escaped rather than executed. Put project images and videos in front matter instead of embedding HTML players.
+
+### Screenshots and videos
+
+`public/images/projects/example.png` is referenced as `/images/projects/example.png`, never `/public/images/...`. Root-relative media must exist; content validation catches missing files.
+
+Existing assets have responsive WebP derivatives recorded in `src/image-assets.ts`; originals remain available. New images fall back to their supplied path automatically, so an optimizer or manifest edit is **not** required to add a project. Resize and compress new assets sensibly. When replacing an existing image with generated derivatives, regenerate those derivatives or remove its mapping in `src/image-assets.ts` to avoid showing stale artwork.
+
+Multiple assets appear in document order. Videos use native controls without autoplay. Keep clips compressed and provide posters where possible. Existing Cloudinary URLs are preserved. Remote media can become unavailable independently of the site; the interface also provides the original video link. Supply captions/transcripts for meaningful audio and explain otherwise unclear visual behavior in the project text.
+
+## Update other information
+
+### Experience
+
+Edit `src/content/experience.json`. Array order is display order; keep it reverse chronological. Example entry:
+
+```json
+{
+  "id": "unique-role-id",
+  "role": "Role title",
+  "organization": "Organization",
+  "location": "City, State",
+  "start": "June 2026",
+  "end": "Present",
+  "summary": "A concise description of the work.",
+  "bullets": ["A factual responsibility or contribution."],
+  "image": "/images/experience/example.jpg"
+}
+```
+
+`location` and `image` are optional; other fields are required. IDs must be unique and should remain stable because `/experience/#unique-role-id` can be linked directly. Local images must exist in `public/`. Substantial research details can live in project Markdown while the experience entry stays concise.
+
+### Skills
+
+Edit `src/content/skills.json`. Each object has a `title` and an `items` array. Add a category or skill without touching components. Categories and values appear in file order; there are no numeric proficiency ratings.
+
+### Biography, education, contact, and résumé
+
+Edit `src/content/profile.json`. `intro` and `personal` contain paragraphs; `interests` contains strings. `social` and `personalLinks` contain `{label, url}` objects. Education, club leadership, and development setup live here too. When graduation changes, update education and any biography paragraph mentioning it.
+
+No public email or real résumé was verified during migration, so neither is populated. Once Cole provides approved details, add optional `email` and/or `resume` strings to this JSON file. Put the real PDF at, for example, `public/files/cole-schwandt-resume.pdf`, then set `"resume": "/files/cole-schwandt-resume.pdf"`. Set `email` to the actual approved address without a `mailto:` prefix. Links render only when values are supplied; no component edit is needed. Do not revive the fictional template CV as a résumé.
+
+### Navigation
+
+Edit `src/content/navigation.json`; each entry has `label` and `href`. Reorder, rename, or link to existing generated routes or HTTPS destinations. Adding a navigation entry does **not** create a top-level page. A new custom page needs a React implementation and route in `src/entry-server.tsx`; project pages are generated automatically.
+
+## Design and theme
+
+`src/styles/main.css` centralizes light/dark colors, fonts, spacing, line lengths, and content width as CSS custom properties. Change `:root` tokens and their dark-theme equivalents together. Source Serif 4 and Source Sans 3 are self-hosted through Fontsource packages, without runtime Google Fonts requests. If changing fonts, update imports and family tokens.
+
+The theme control supports system, light, and dark modes. Explicit choices persist locally; system mode follows the operating system. Preserve visible focus, contrast, reduced-motion support, and readable line lengths when changing styles.
+
+`PRODUCT.md`, `DESIGN.md`, and `.impeccable/` capture product/design decisions. Repository-local Impeccable installations are retained in `.agents/skills/impeccable/` and `.github/skills/impeccable/`; routine content editing requires neither reinstallation nor skill execution.
+
+## Static rendering architecture
+
+Vite builds browser assets and `src/entry-server.tsx`. `scripts/build.ts` gets the route list, renders React with `renderToString`, and writes each page into `dist/`. `src/entry-client.tsx` activates that markup with `hydrateRoot`.
+
+Main routes are `/`, `/projects/`, `/experience/`, and `/skills/`. Markdown projects become `/projects/<filename>/index.html`. `/about/` and `/about.html` remain homepage aliases. A genuine `404.html` handles missing pages; it is not a routing workaround. Navigation uses ordinary links without React Router or a GitHub Pages fallback. Content and metadata are available before JavaScript runs.
+
+The build generates canonical URLs, Open Graph/Twitter metadata, a sitemap, robots configuration, and `.nojekyll`. Production uses `https://ctschwandt.github.io` with Vite base `/`. `public/social-preview.png` supplies the social preview. If changing domains, update `siteUrl` in `src/entry-server.tsx`, the origin in `scripts/check-site.ts`, and Vite’s base when needed.
+
+Do not commit generated `dist/`, temporary server bundles, dependencies, or browser reports.
+
+## Deploy to GitHub Pages
+
+`.github/workflows/deploy.yml` installs from the lockfile, validates content, typechecks, builds, validates static output, and runs Chromium behavior and accessibility tests. Pull requests and pushes to `main` **validate only**. Publication is manual until Cole approves deployment.
+
+Before the first approved deployment:
+
+1. In repository **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. Configure the `github-pages` environment with a required reviewer where the repository plan supports it. The deployment job uses this environment.
+3. Review and merge the intended changes normally. Merging alone does not deploy.
+4. After deployment approval, open **Actions → Validate and deploy portfolio → Run workflow** and select `main`.
+5. Approve the environment deployment if required, then inspect the workflow and published routes.
+
+The workflow uploads `dist/` and deploys with the official Pages actions. The address stays `https://ctschwandt.github.io/`. No backend, database, API keys, or hosting credentials are required. Local builds do not publish anything.
+
+Future content updates use the same validated, approved manual deployment flow. Automatic publication can be added later if Cole explicitly chooses it.
+
+## Repository layout
+
+```text
+src/
+  content/           Editable Markdown and JSON
+  components/        Shared layout, media, entries, theme control
+  pages/             About, projects, experience, skills, not-found
+  styles/main.css    Tokens and responsive styles
+  content-loader.ts  Build-time parsing and validation
+  entry-server.tsx   Routes, rendered HTML, metadata
+  entry-client.tsx   Hydration
+scripts/             Build and validation tools
+public/              Media, social preview, optional résumé
+docs/                Migration record
+.github/workflows/   Validation and approved deployment
+```
+
+The inherited Academic Pages examples are not part of the new publication. Original license attribution remains in `LICENSE`; see [the migration record](docs/content-migration.md).
