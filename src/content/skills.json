@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Programming languages",
+    "items": [
+      "C",
+      "C++",
+      "Python",
+      "OCaml",
+      "MIPS Assembly",
+      "SQL",
+      "Java",
+      "C#"
+    ]
+  },
+  {
+    "title": "Systems and development tools",
+    "items": [
+      "Linux",
+      "Git / GitHub",
+      "Make",
+      "Bash",
+      "GDB",
+      "AddressSanitizer (ASan)",
+      "VMware"
+    ]
+  },
+  {
+    "title": "Graphics",
+    "items": [
+      "OpenGL",
+      "GLFW",
+      "SDL"
+    ]
+  },
+  {
+    "title": "Machine learning and research",
+    "items": [
+      "PyTorch",
+      "Stable-Baselines3",
+      "PyBind11"
+    ]
+  },
+  {
+    "title": "Frameworks and libraries",
+    "items": [
+      "Flask",
+      "Regex"
+    ]
+  }
+]

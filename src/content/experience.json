@@ -1,0 +1,80 @@
+[
+  {
+    "id": "tutor",
+    "role": "Computer Science & Mathematics Tutor",
+    "organization": "Columbia College",
+    "start": "October 2025",
+    "end": "Present",
+    "summary": "Serve as a tutor for undergraduate courses in both math and computer science.",
+    "bullets": [
+      "Provide one-on-one and group instruction for programming, algorithms, and upper-level mathematics.",
+      "Assist students in debugging code and strengthening conceptual understanding.",
+      "Guide assignment and project architecture, emphasizing object-oriented design and clean structure.",
+      "Support student proficiency in Linux, Git workflows, and development environments.",
+      "Prepare students for exams through targeted problem-solving and review sessions."
+    ],
+    "image": "/images/experience/tutor.jpg"
+  },
+  {
+    "id": "nsf-reu",
+    "role": "Undergraduate Researcher — NSF REU",
+    "organization": "Missouri University of Science & Technology",
+    "start": "June 2025",
+    "end": "August 2025",
+    "summary": "Selected as 1 of 10 students (120+ applicants) for an NSF-funded Research Experience for Undergraduates (REU) in Computer Science.",
+    "bullets": [
+      "Co-developed a simulation environment modeling underground miners, wireless sensors, and battery depletion.",
+      "Trained reinforcement learning agents (PPO, PPO-LSTM) using CNN and attention-based architectures.",
+      "Implemented a predictive D* Lite variant in C++ with PyBind11 bindings.",
+      "Built a custom PyGame renderer to visualize agent learning and route optimization."
+    ],
+    "image": "/images/experience/reu.jpg"
+  },
+  {
+    "id": "mbs",
+    "role": "Seasonal Warehouse Worker",
+    "organization": "MBS Textbook Exchange",
+    "start": "June 2024",
+    "end": "August 2024",
+    "summary": "Worked full-time in a fast-paced book processing warehouse.",
+    "bullets": [
+      "Inspected and processed used textbooks for resale.",
+      "Rotated between departments to meet operational demands.",
+      "Trained new employees on safety and workflow standards.",
+      "Prepared and packaged customer orders for shipment."
+    ],
+    "image": "/images/experience/mbs.jpg",
+    "location": "Columbia, MO"
+  },
+  {
+    "id": "mutrux",
+    "role": "Fuel Attendant",
+    "organization": "Mutrux Automotive",
+    "start": "June 2022",
+    "end": "February 2024",
+    "summary": "Worked at a full-service gas station and automotive shop.",
+    "bullets": [
+      "Provided customer service and handled fuel and repair transactions.",
+      "Managed register operations and end-of-day reporting.",
+      "Maintained store organization and daily operations."
+    ],
+    "image": "/images/experience/mutrux.jpg",
+    "location": "Columbia, MO"
+  },
+  {
+    "id": "construction",
+    "role": "Concrete Laborer",
+    "organization": "Cravis Custom Homes",
+    "start": "June 2021",
+    "end": "August 2021",
+    "summary": "Worked on residential and commercial concrete flatwork projects.",
+    "bullets": [
+      "Prepared sites, set forms, and assisted with grading.",
+      "Distributed and leveled concrete during pours.",
+      "Maintained tools and followed strict safety protocols.",
+      "Worked in highly labor-intensive, time-sensitive conditions."
+    ],
+    "image": "/images/experience/construction.jpg",
+    "location": "Hallsville, MO"
+  }
+]
