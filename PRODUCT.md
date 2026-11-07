@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Requested replacement: React, TypeScript, Vite, semantic HTML, plain CSS, Markdown with YAML front matter, GitHub Actions and GitHub Pages. Current implementation is Jekyll/Academic Pages; Full migration is authorized by the owner’s latest instruction. Keep https://ctschwandt.github.io/ as the public address.
+Existing React, TypeScript, Vite, semantic HTML, plain CSS, Markdown with YAML front matter, GitHub Actions and GitHub Pages. Preserve the completed static React architecture. The current task replaces its visual design, using Jekyll commit `86654f93ecc573e16266e3a3aff137b48cfdb1f5` as the visual baseline. Keep https://ctschwandt.github.io/ as the public address.
 
 ## Users
 
@@ -38,7 +38,7 @@ Visitors follow normal web links, including direct links to project details. The
 
 ## Brand Commitments
 
-User explicitly requests scholarly, understated, professional, readable, information-focused design. Favor the clarity of university faculty sites and technical publications. Typography, hierarchy, spacing, restrained color, and direct links should do the work. No oversized hero, decorative effects, animation spectacle, skill scores, or generic marketing claims. Human background, leadership, faith, interests, and development setup from the genuine About page must survive, with engineering work retaining priority.
+The November 6 redesign brief supersedes the earlier cream/green, serif, technical-report direction. Use and evolve the original Jekyll dark indigo/lavender identity: #22223B background, #4A4E69 surfaces, #F2E9E4 text, #C9ADA7 almond accent and #9A8C98 lilac. A prominent photograph/profile sidebar, personal academic character and substantial project demonstrations are essential. Modern sans-serif typography, large media galleries, considered elevated panels, and purposeful motion are welcome. Do not reproduce the rejected document-like layout or use generic marketing slogans, fake terminal interfaces, stock imagery, or unsupported claims. Faith, preaching, interests, developer setup and personal links remain part of the site. Preserve keyboard accessibility, readable contrast, responsive layouts and reduced-motion support. Do not publish or deploy without approval.
 
 ## Evidence on Hand
 

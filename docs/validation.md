@@ -1,5 +1,7 @@
 # Validation record
 
+For the completed dark visual redesign and current results, see [redesign-review.md](redesign-review.md). The record below documents the earlier React migration.
+
 Local validation of the React migration on November 6, 2026. These results describe the prepared checkout, not a deployed GitHub Pages release.
 
 - Clean `npm ci` installation passed using the committed lockfile.

@@ -124,7 +124,7 @@ Start body headings at `##`; the page supplies its own `h1`. Standard paragraphs
 
 Existing assets have responsive WebP derivatives recorded in `src/image-assets.ts`; originals remain available. New images fall back to their supplied path automatically, so an optimizer or manifest edit is **not** required to add a project. Resize and compress new assets sensibly. When replacing an existing image with generated derivatives, regenerate those derivatives or remove its mapping in `src/image-assets.ts` to avoid showing stale artwork.
 
-Multiple assets appear in document order. Videos use native controls without autoplay. Keep clips compressed and provide posters where possible. Existing Cloudinary URLs are preserved. Remote media can become unavailable independently of the site; the interface also provides the original video link. Supply captions/transcripts for meaningful audio and explain otherwise unclear visual behavior in the project text.
+The main Projects page provides large screenshot/video selectors alongside authored technical highlights. Image links enlarge in a keyboard-accessible dialog; without JavaScript they still open the original file. Project-detail pages retain every image and video in document order. Videos use native controls without autoplay. Keep clips compressed and provide posters where possible. Existing Cloudinary URLs are preserved. Remote media can become unavailable independently of the site; the interface also provides the original video link. Supply captions/transcripts for meaningful audio and explain otherwise unclear visual behavior in the project text.
 
 ## Update other information
 
@@ -164,11 +164,15 @@ Edit `src/content/navigation.json`; each entry has `label` and `href`. Reorder, 
 
 ## Design and theme
 
-`src/styles/main.css` centralizes light/dark colors, fonts, spacing, line lengths, and content width as CSS custom properties. Change `:root` tokens and their dark-theme equivalents together. Source Serif 4 and Source Sans 3 are self-hosted through Fontsource packages, without runtime Google Fonts requests. If changing fonts, update imports and family tokens.
+`src/styles/main.css` centralizes light/dark colors, fonts, spacing, line lengths, and content width as CSS custom properties. The `:root` tokens define the default indigo/lavender dark theme; `[data-theme="light"]` defines the optional light variant. Manrope headings and IBM Plex Sans body text are self-hosted through Fontsource packages, without runtime Google Fonts requests. If changing fonts, update imports and family tokens.
 
-The theme control supports system, light, and dark modes. Explicit choices persist locally; system mode follows the operating system. Preserve visible focus, contrast, reduced-motion support, and readable line lengths when changing styles.
+The site defaults to dark on the first visit, with persistent dark, light, and system options. Explicit system mode follows the operating system, including after a reload. Preserve visible focus, contrast, reduced-motion support, and readable line lengths when changing styles.
 
-`PRODUCT.md`, `DESIGN.md`, and `.impeccable/` capture product/design decisions. Repository-local Impeccable installations are retained in `.agents/skills/impeccable/` and `.github/skills/impeccable/`; routine content editing requires neither reinstallation nor skill execution.
+`src/styles/projects.css` controls showcase panels and galleries; `src/styles/secondary.css` controls Experience and Skills. The portrait sidebar uses `public/images/profile.png` and its responsive derivatives. On phones, the full introduction follows the featured demonstration so the project title and screenshot are visible sooner.
+
+The completed visual review, test results, and known verification limits are recorded in [docs/redesign-review.md](docs/redesign-review.md).
+
+`PRODUCT.md`, `DESIGN.md`, and `.impeccable/` capture the current product/design decisions. The previous cream/green technical-report design is superseded by the dark personal software showcase. Repository-local Impeccable installations are retained in `.agents/skills/impeccable/` and `.github/skills/impeccable/`; routine content editing requires neither reinstallation nor skill execution.
 
 ## Static rendering architecture
 
