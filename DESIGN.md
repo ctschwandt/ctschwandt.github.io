@@ -1,249 +1,299 @@
 ---
 name: "Cole Schwandt’s portfolio"
-description: "A scholarly, content-first portfolio for technical work."
+description: "A personal software showcase with an indigo ground, lavender interactions, and substantial project demonstrations."
 colors:
-  paper: "#f7f8f5"
-  surface: "#edf0eb"
-  ink: "#242d28"
-  secondary: "#59645c"
-  accent: "#285b45"
-  accent-hover: "#173b2c"
-  line: "#cdd5cc"
-  selection: "#d2e2d4"
-  focus: "#276b50"
-  dark-paper: "#1b231f"
-  dark-surface: "#252f29"
-  dark-ink: "#e8ede7"
-  dark-secondary: "#afbdb1"
-  dark-accent: "#a5d2b7"
-  dark-accent-hover: "#cee9d7"
-  dark-line: "#46534a"
-  dark-selection: "#375b46"
-  dark-focus: "#a5d2b7"
+  paper: "#22223b"
+  sidebar: "#1c1c30"
+  surface: "#292940"
+  surface-raised: "#32324c"
+  ink: "#f2e9e4"
+  secondary: "#bdb9ce"
+  accent: "#c7b9f3"
+  accent-hover: "#e3d8ff"
+  almond: "#c9ada7"
+  line: "#4a4e69"
+  selection: "#545077"
+  focus: "#d2c1ff"
+  light-paper: "#f3f1f8"
+  light-sidebar: "#eae6f2"
+  light-surface: "#fff"
+  light-surface-raised: "#eae6f2"
+  light-ink: "#292538"
+  light-secondary: "#62586f"
+  light-accent: "#684b9f"
+  light-accent-hover: "#493174"
+  light-almond: "#785d57"
+  light-line: "#d2cbdc"
+  light-selection: "#dcd0f1"
+  light-focus: "#684b9f"
 typography:
   display:
-    fontFamily: "'Source Serif 4', Georgia, serif"
-    fontSize: "clamp(2.25rem, 3.8vw, 3.25rem)"
-    fontWeight: 400
-    lineHeight: 1.2
-    letterSpacing: "-0.025em"
+    fontFamily: "'Manrope', 'Segoe UI', sans-serif"
+    fontSize: "clamp(2rem, 3vw, 2.75rem)"
+    fontWeight: 700
+    lineHeight: 1.25
+    letterSpacing: "-0.035em"
   headline:
-    fontFamily: "'Source Serif 4', Georgia, serif"
-    fontSize: "1.875rem"
-    fontWeight: 400
-    lineHeight: 1.2
-    letterSpacing: "-0.018em"
+    fontFamily: "'Manrope', 'Segoe UI', sans-serif"
+    fontSize: "clamp(1.35rem, 2vw, 1.65rem)"
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: "-0.025em"
   title:
-    fontFamily: "'Source Serif 4', Georgia, serif"
-    fontSize: "1.5rem"
-    fontWeight: 400
-    lineHeight: 1.2
-    letterSpacing: "-0.01em"
+    fontFamily: "'Manrope', 'Segoe UI', sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: "-0.02em"
+  project-title:
+    fontFamily: "'Manrope', 'Segoe UI', sans-serif"
+    fontSize: "clamp(1.3rem, 1.7vw, 1.65rem)"
+    fontWeight: 700
+    lineHeight: 1.25
+    letterSpacing: "-0.025em"
   body:
-    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
-    fontSize: "1.0625rem"
+    fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif"
+    fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.6
-  lead:
-    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
-    fontSize: "1.1875rem"
+    lineHeight: 1.65
+  project-prose:
+    fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif"
+    fontSize: "0.9375rem"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.85
   label:
-    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif"
     fontSize: "0.875rem"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.65
   caption:
-    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
-    fontSize: "0.875rem"
+    fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif"
+    fontSize: "0.8125rem"
     fontWeight: 400
     lineHeight: 1.5
   navigation:
-    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
-    fontSize: "1rem"
-    fontWeight: 400
-    lineHeight: 1.6
-  component-label:
-    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+    fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif"
     fontSize: "0.9375rem"
-    fontWeight: 400
-    lineHeight: 1.6
+    fontWeight: 500
+    lineHeight: 1.65
   action:
-    fontFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
-    fontSize: "1.0625rem"
+    fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif"
+    fontSize: "0.875rem"
     fontWeight: 600
-    lineHeight: 1.6
+    lineHeight: 1.65
+  technology:
+    fontFamily: "'IBM Plex Sans', 'Segoe UI', sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 400
+    lineHeight: 1.4
 rounded:
-  square: "0"
+  thumbnail: "5px"
+  tag: "6px"
+  navigation: "7px"
+  control: "8px"
+  media: "10px"
+  dialog: "12px"
+  panel: "14px"
+  showcase: "16px"
+  portrait: "50%"
 spacing:
-  "2": "0.5rem"
-  "3": "0.75rem"
-  "4": "1rem"
-  "5": "1.25rem"
-  "6": "1.5rem"
-  "8": "2rem"
-  "10": "2.5rem"
-  "12": "3rem"
-  "14": "3.5rem"
+  sm: "0.75rem"
+  base: "1rem"
+  md: "1.25rem"
+  panel: "1.5rem"
+  lg: "2rem"
+  xl: "3rem"
 components:
-  text-link:
-    textColor: "{colors.accent}"
+  button-primary:
+    backgroundColor: "{colors.accent}"
+    textColor: "{colors.sidebar}"
     typography: "{typography.action}"
-  text-link-hover:
-    textColor: "{colors.accent-hover}"
-  navigation:
+    rounded: "{rounded.control}"
+    padding: "0.65rem 1rem"
+  button-primary-hover:
+    backgroundColor: "{colors.accent-hover}"
+    textColor: "{colors.sidebar}"
+  button-project:
+    backgroundColor: "{colors.accent}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.navigation}"
+    padding: "0.55rem 0.9rem"
+  button-project-hover:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+  button-quiet:
+    textColor: "{colors.secondary}"
+    rounded: "0"
+    typography: "{typography.label}"
+  navigation-link:
     textColor: "{colors.secondary}"
     typography: "{typography.navigation}"
-    padding: "0.6rem 0"
+    rounded: "{rounded.navigation}"
+    padding: "0.65rem 1rem"
   navigation-current:
+    backgroundColor: "{colors.surface-raised}"
     textColor: "{colors.accent}"
-  native-select:
-    backgroundColor: "{colors.paper}"
+  technology-chip:
     textColor: "{colors.secondary}"
-    typography: "{typography.label}"
-    rounded: "{rounded.square}"
-    padding: "0.3rem 1.5rem 0.3rem 0.5rem"
-  project-entry:
-    textColor: "{colors.ink}"
-    padding: "1.5rem 0"
-  technology-list:
-    textColor: "{colors.secondary}"
-    typography: "{typography.label}"
-  dialog-close:
-    textColor: "{colors.ink}"
-    typography: "{typography.component-label}"
-    padding: "{spacing.2}"
-  media-error:
+    typography: "{typography.technology}"
+    rounded: "{rounded.tag}"
+    padding: "0.25rem 0.6rem"
+  project-card:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    padding: "{spacing.4}"
+    rounded: "{rounded.panel}"
+  project-showcase:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.showcase}"
+  appearance-select:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.tag}"
+    padding: "0.4rem 0.5rem"
+  image-dialog:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.dialog}"
+    padding: "0"
 ---
 
 # Design System: Cole Schwandt’s portfolio
 
 ## Overview
 
-**Creative North Star: "A personal technical report"**
+**Creative North Star: "Personal software exhibition"**
 
-The portfolio uses the calm, readable character of a university faculty page and technical publication. Real work, precise descriptions and direct links carry the presentation. Serif headings establish the document hierarchy; sans-serif prose and aligned metadata keep it easy to scan.
+A personal software exhibition pairs Cole’s visible photograph and academic profile with substantial demonstrations of his engineering work. Deep indigo grounds, lighter violet panels, warm text, and lavender interactions evolve the original Jekyll identity. Real screenshots and videos supply the visual detail; the interface gives them room beside direct technical descriptions.
 
-The interface is restrained and professional. Neutral paper, charcoal ink, a single muted green accent and thin dividing rules support compact content. Native controls and ordinary browser navigation preserve familiar reading and interaction behavior across light and dark appearances.
+Modern sans-serif typography, clear groups, softly rounded panels, and restrained state changes make the portfolio confident and approachable. The owner’s November 2026 redesign brief replaces the former cream/green, serif, technical-report direction. Personal identity and authentic project evidence govern the system across pages.
 
 **Key Characteristics:**
-- Scholarly serif headings and readable sans-serif prose.
-- One muted green accent with semantic light and dark counterparts.
-- Flat, open sections separated by thin rules.
-- Compact metadata, direct links and native controls.
-- Responsive reading columns and visible keyboard focus.
+
+- Indigo and lavender tonal layers with warm, readable text.
+- Manrope headings paired with IBM Plex Sans reading text.
+- A prominent portrait/profile and substantial project media.
+- Clear navigation, contained panels, and concise technical labels.
+- Native, keyboard-accessible media with restrained motion.
 
 ## Colors
 
-The palette keeps a quiet green undertone in its neutral surfaces and reserves stronger green for interaction. The frontmatter records the actual light and dark values; dark-prefixed entries are counterparts of the same semantic roles, not additional accents.
+The dark palette retains the original indigo ground, warm text, dusty grape structure, and almond detail while making lavender the interactive accent. Frontmatter values are normative; unprefixed colors describe the default dark theme and `light-` colors describe the explicit light variant.
 
 ### Primary
 
-- **Muted forest green** (`accent`): ordinary links, text actions and current navigation. `accent-hover` deepens the link color in light appearance; the dark counterpart becomes lighter on hover.
-- **Focus green** (`focus`): visible keyboard outlines. Dark appearance shares its focus value with the dark accent.
-- **Selection green** (`selection`): selected text background, paired with the current ink color.
+- **Lavender** (`accent`): links, selected media, current navigation, primary actions, and selected technical emphasis.
+- **Pale lavender** (`accent-hover`): the brighter response for general links and primary buttons.
+- **Focus lavender** (`focus`): the global keyboard outline, separate from hover treatment.
+
+### Secondary
+
+- **Almond** (`almond`): small profile-detail icons; a quiet warm counterpoint to lavender.
 
 ### Neutral
 
-- **Quiet paper** (`paper`): the document canvas, appearance selector and enlarged-image dialog.
-- **Recessed surface** (`surface`): image letterboxing, code blocks and media error messages.
-- **Charcoal ink** (`ink`): headings, primary prose and project titles. Dark appearance uses pale ink on deep green-charcoal paper.
-- **Secondary ink** (`secondary`): dates, technologies, captions, supporting descriptions and inactive navigation.
-- **Hairline green-gray** (`line`): section dividers, row borders and native selector/dialog outlines.
+- **Indigo ground** (`paper`): the page and screenshot/video stages.
+- **Deep indigo** (`sidebar`): the header, portrait surround, compact profile panel, and code blocks.
+- **Violet panel** (`surface`): project cards, experience and skills groups, and personal information panels.
+- **Raised violet** (`surface-raised`): current navigation, skill chips, and media-error panels.
+- **Warm white** (`ink`): headings, primary copy, and strong text.
+- **Soft lilac** (`secondary`): descriptions, metadata, dates, and secondary navigation.
+- **Dusty grape** (`line`): panel edges, separators, timeline connectors, and resting thumbnail outlines.
+- **Selection violet** (`selection`): selected text behind the normal foreground.
 
-Print rules replace the screen colors with white paper, black ink and links, dark gray supporting text and pale gray rules. The native video surface remains dark; the enlarged-image backdrop is translucent dark green-black. These contextual values are not a second interface palette. Sidecar tonal strips are generated panel previews, not additional application tokens.
+The light variant uses a pale violet page, white cards, deep violet text, and a darker purple accent. The theme selector offers Dark, Light, and System; first visits default to Dark. A stored explicit choice persists when local storage is available, and System follows changes to the operating-system preference.
 
-**The One Accent Rule.** Use green to identify interaction and state; keep prose, metadata and structural rules in their neutral roles.
+**The Semantic Theme Rule.** Use the existing semantic CSS properties for surfaces, text, and interactions so each component follows the selected theme. Keep original screenshot and video pixels unchanged.
 
 ## Typography
 
-**Display Font:** Source Serif 4, with Georgia and serif fallbacks.
+**Display Font:** Manrope, with Segoe UI and sans-serif fallbacks.
 
-**Body Font:** Source Sans 3, with Segoe UI and sans-serif fallbacks.
+**Body Font:** IBM Plex Sans, with Segoe UI and sans-serif fallbacks.
 
-**Code Font:** the native monospace stack, followed by Cascadia Code, Source Code Pro and monospace.
+**Code Font:** ui-monospace, Cascadia Code, monospace; limited to authored code and code blocks.
 
-**Character:** Regular-weight serif headings give the site a scholarly document voice. Sans-serif body text, small labels and restrained semibold emphasis preserve a clear information hierarchy. Source Serif 4 and Source Sans 3 are locally bundled in regular and semibold weights.
+Manrope’s compact headings give project names a clear silhouette; IBM Plex Sans supports detailed implementation notes and personal information. Fonts are self-hosted. Manrope loads weights 400, 600, and 700; IBM Plex Sans loads 400, 500, and 600.
 
 ### Hierarchy
 
-- **Display:** the frontmatter display role is the default page heading. At the narrow breakpoint, ordinary page headings use (2.5rem) and project headings use (2.25rem).
-- **Headline:** the default section heading uses the headline role; specific prose, secondary sections and narrow layouts use smaller serif headings where established in the stylesheet.
-- **Title:** project and research headings use the title role; project listing titles become (1.375rem) on narrow screens.
-- **Body:** the body role is the default prose style. Long-form content is limited to (70ch), with the introduction held to (56ch).
-- **Lead:** the lead role supports page introductions and project summaries; these use (1.125rem) at the narrow breakpoint.
-- **Label / caption:** technology lists and the footer use the label size; figure captions use the tighter caption line height. Supporting notes, dates, small actions and the dialog close control use the component-label role.
-- **Navigation / action:** main navigation uses the navigation role. Standalone text actions use semibold; recurring project-resource links and section actions reduce to regular weight and the component-label size.
-- **Code:** inline code uses the monospace stack at (0.85em); code blocks retain horizontal overflow when needed.
+- **Display:** the frontmatter `display` role supplies page titles. On phones at the shell breakpoint, ordinary page titles resolve to (2rem).
+- **Headline:** the fluid `headline` role supplies section headings. The `title` role supplies ordinary third-level headings.
+- **Project title:** the `project-title` role gives showcase names stronger weight; project-detail titles use (clamp(2rem, 3vw, 3rem)), a tighter line height (1.12), and a width limit (22ch), changing to (2.25rem) at the project mobile breakpoint.
+- **Body:** ordinary reading uses the `body` role. Showcase summaries use (0.9375rem) with line height (1.7); implementation bullets use (0.875rem) with line height (1.65).
+- **Project prose:** the `project-prose` role gives technical case studies extra line spacing. Main prose is limited to (70ch); project summary text to (68ch).
+- **Label and caption:** secondary information uses `label` and `caption`. Gallery captions use (0.75rem) with line height (1.6).
+- **Navigation and action:** dedicated frontmatter roles distinguish medium-weight navigation from semibold primary actions. Technology tags use the smaller `technology` role and preserve authored capitalization.
 
-**The Reading Hierarchy Rule.** Use serif type for document headings and sans-serif type for prose, metadata and controls; use size and spacing before adding weight.
+**The Reading Pair Rule.** Use Manrope for headings and IBM Plex Sans for interface and reading text. Reserve monospace for code rather than turning the portfolio into a simulated terminal.
 
 ## Layout
 
-The shared container is centered and limited to (1100px), with total horizontal gutters of (5rem). The medium breakpoint is (1000px), where total gutters become (4rem). At (720px), total gutters become (2.5rem), the header stacks, and the existing navigation remains visible across the available width.
+The header and page share a centered container capped at (1440px). Wide screens leave total horizontal space of (5rem) outside that container. The main grid starts (2.75rem) below the header, with a profile column (224px), a gap (3rem), and a flexible content column. The profile is sticky with a top inset (2rem), except on desktop viewports no taller than (750px). The header has a minimum height (78px).
 
-Layouts use CSS grid for aligned content and flex wrapping for links and metadata. Introduction, project-image rows, research summaries, experience rows and skill groups use purpose-specific columns on larger screens, then collapse to one column at the narrow breakpoint. The standard image and video galleries are two columns and become one column on narrow screens. A single-image gallery is limited to (780px).
+At (1200px) and below, the profile narrows to (200px), the column gap becomes (2rem), and the portrait shrinks from (160px) to (144px). At (1060px) and below, the profile becomes a static, full-width panel above the main content, with two internal columns and a portrait (112px). At (680px) and below, the outer space totals (2.5rem), header navigation wraps below the identity, and the profile becomes a compact horizontal portrait/name group with a portrait (64px). Profile location/education details are hidden in this compact treatment; profile links remain visible.
 
-The spacing entries record repeated quarter-rem values in the actual declarations, keyed by quarter-rem count. Compact controls and metadata use the smaller intervals; rows commonly use (1.5rem) or (2rem) block padding; major sections use larger intervals. These describe the built rhythm rather than a requirement to consume every declared CSS spacing variable. Unused declarations are not part of this recorded system.
+Showcase cards place media and technical prose side by side at a (1.2fr / 1fr) ratio. At (1150px) and below, these stack with media first; their stage changes from (4 / 3) to (16 / 10). At (700px) and below, showcase titles and technology tags move above the media, followed by technical copy; card spacing and padding contract, detail-page heading/media pairs stack, and screenshot/video grids become one column. Desktop detail galleries, compact project grids, and homepage project grids use two columns. Homepage grids collapse at (680px); the academic summary remains before the featured demonstration, while the full introduction follows it. Experience and skills have their own content-driven adjustments at (1050px), (720px), and (480px).
 
-Long-form reading and listing widths remain distinct: the outer container supports aligned rows and media, while prose uses the reading width. The footer wraps into a small grid on narrow screens. Print removes screen gutters and avoids splitting project and experience rows.
+Use the observed spacing steps in frontmatter for recurring gaps and padding. Panels generally use (1.25rem–2rem) internal space; showcase rows are separated by (2rem), contracting to (1.5rem) on phones. Preserve a flexible main column and wrapping links/tags so long technical names do not force horizontal page overflow.
 
 ## Elevation & Depth
 
-The interface has no box shadows or animated elevation. Open sections, thin rules and the recessed surface tone separate content. The native enlarged-image dialog is the only modal layer: paper and a thin border sit above a translucent backdrop (`rgb(8 16 11 / .84)`). State changes are immediate; the stylesheet also disables transitions and animations for reduced-motion preferences.
+Depth comes from indigo-to-violet tonal layers, thin borders, containment, and the darkened image-dialog backdrop. The shipped interface has no box shadows. Cards remain still; the existing small project-entry image zoom is (1.025) over (240ms) with `cubic-bezier(.16, 1, .3, 1)`. The portrait border responds over (180ms ease-out), and the main button background over (150ms ease-out), when hover and unrestricted motion are available. Reduced-motion preference disables animation and transitions globally.
 
-**The Flat Document Rule.** Use rules, whitespace and surface tone to establish structure; reserve the modal layer for enlarged project media.
+**The Tonal Depth Rule.** Use the established surface layers and fine borders for ordinary grouping. Keep motion tied to an existing hover or selection interaction.
 
 ## Shapes
 
-The interface uses straight edges and rectangular media. The appearance selector explicitly has square corners; project entries remain open rows with a bottom rule rather than enclosed cards. Borders and dividers are thin (1px). Media preserve their own proportions through deliberate containment or cropping; project screenshots in galleries use contain behavior rather than ornamental clipping.
+Gently rounded rectangles distinguish interface controls from larger content panels. Tags use the `tag` radius; navigation and showcase actions use `navigation`; main buttons, code blocks, and error messages use `control`. Project media stages use `media`; image dialogs and compact project panels use `dialog`; recurring content cards use `panel`; the large showcase uses `showcase`, reducing to the dialog radius on small screens. Thumbnails use `thumbnail`. The portrait remains circular with a narrow border and an inset frame.
 
-Keyboard focus is an offset outline (2px, with a 5px offset) in the current focus color. It is a functional state, not elevation or decoration.
+Panel borders are (1px) in the semantic line color. Screenshot stages contain media rather than clipping important interface pixels; thumbnail images may crop to help selection. Native video controls retain their familiar shape.
 
 ## Components
 
-### Text links
+### Buttons
 
-Direct, compact actions use green text and a small inline SVG arrow (14px). The base action is semibold; contexts such as project resources use regular weight. Hover changes the green and adds an underline. Ordinary inline links remain underlined, with underline thickness increasing on hover. All keyboard interactions retain the shared focus outline.
+Primary actions are compact lavender anchors with deep-indigo text, semibold body type, the control radius, padding (0.65rem 1rem), and a minimum height (42px). Hover uses the accent-hover color. In the light variant, the main primary action uses white text. Showcase project actions use the navigation radius, padding (0.55rem 0.9rem), and minimum height (40px); their hover uses the primary text color as the fill. Quiet and source links stay unfilled and brighten on hover.
 
-### Native controls
+All interactive elements share a keyboard outline (2px) in the focus color, offset (5px). Inline SVG icons accompany meaningful labels rather than replacing them.
 
-The appearance selector uses a visible text label, paper background, secondary ink, thin rule border, square corners and a minimum height (38px). Its native options are System, Light and Dark. The control is enabled after hydration; an explicit preference persists when browser storage is available, while System follows the operating system.
+### Technology and skill chips
 
-The dialog close button is a transparent, borderless text control with an inline SVG close mark, compact padding and a minimum target height (44px). It uses the shared focus outline. The shipped button has no additional hover animation or custom active treatment.
+Technology tags are outlined, noninteractive labels in secondary text with padding (0.25rem 0.6rem). Skills use filled raised-surface chips within grouped panels. Primary programming languages receive larger Manrope text and a clear lower rule; the site does not display invented proficiency scores.
 
-### Navigation
+### Cards and project showcases
 
-The name link uses the serif face; the visible main navigation uses the sans-serif navigation role. Inactive links use secondary ink, while hover and the current page use green. The current page also has a thin underline separated from its baseline (0.6rem). At the narrow breakpoint, the header stacks and navigation text becomes (0.9375rem); it remains directly available without a menu toggle.
+Large showcases hold an authentic screenshot/video stage beside project titles, technology tags, a factual summary, up to three authored implementation bullets, and project/source links. Ordinary project cards use the panel radius, a fine border, and (1.5rem) copy padding. Text-only projects retain substantial copy without invented media. Experience and skills groups reuse the panel surface and rounded containment.
 
-### Project rows and metadata
+### Navigation and profile
 
-Project entries are open articles separated by a bottom rule. A serif title, plain technology list, summary and resource links form the reading order. The image variant adds a contained screenshot column (260px), reduced to (220px) at the medium breakpoint and stacked below the copy at the narrow breakpoint. Titles start in ink and become green and underlined on hover.
+The header combines the existing code-mark identity with four text destinations. Default links use secondary text; hover uses primary text over the panel surface; the current page uses lavender over the raised surface. The profile holds the actual portrait, name, academic role, source-backed details, and personal links. Desktop profile links form a vertical list; compact layouts wrap them horizontally.
 
-Technology labels form a wrapping text list in secondary ink, with no chip background, enclosing border or pill treatment. Experience rows use the same flat structure with aligned dates, description and optional image; skill groups align a serif category heading beside a wrapping list.
+### Appearance control
 
-### Project media
+A labeled native select sits in the footer, with the tag radius, line border, panel fill, primary text, padding (0.4rem 0.5rem), and minimum height (36px). It becomes available after hydration. Theme changes affect the current page even when storage is unavailable.
 
-Screenshot thumbnails are ordinary links to the original files. JavaScript enhances them with a native dialog that restores focus to the opener when closed; Escape, the close control and backdrop interaction dismiss it. The dialog keeps the original image visible with contain behavior and a caption where available.
+### Project media and image dialog
 
-Videos use native controls, no autoplay and no preload. A local project screenshot supplies a poster when one is available. Captions retain an original-file link; a failed video becomes a bordered, recessed-surface status message with a direct link to its original file.
+Gallery thumbnails are image links and explicit video buttons, grouped with accessible labels. Selected images use `aria-current`; selected video buttons use `aria-pressed`. A selected thumbnail adopts the accent outline, and selected screenshot previews become fully opaque. Thumbnail dimensions are (64px × 48px), reducing to (56px × 44px) on phones.
+
+Selecting the main screenshot opens a native modal dialog when supported; the original image remains its direct-link fallback. The dialog has a close button, Escape support, a dark backdrop (`rgb(9 9 20 / .9)`), viewport-bounded media, and returns focus to the opener on close. Project videos use native controls, inline playback, no autoplay, and `preload="none"`. Failed video loads display an inline status with the original-file link; no-JavaScript visitors retain image links and direct demonstration links.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** keep headings scholarly, prose readable and metadata compact.
-- **Do** preserve semantic light and dark color roles and the shared visible focus treatment.
-- **Do** use thin rules, whitespace and aligned columns to organize substantive content.
-- **Do** retain native controls, direct media-file links and responsive reading widths.
+- **Do** use the semantic indigo, lavender, and warm-text palette across both themes.
+- **Do** pair Manrope headings with IBM Plex Sans reading and interface text.
+- **Do** keep the real profile portrait and personal academic identity prominent.
+- **Do** give authentic project screenshots, videos, authored technical bullets, and source links substantial space.
+- **Do** preserve keyboard focus, native media controls, direct-link fallbacks, and reduced-motion behavior.
+- **Do** use tonal panels, rounded containment, and clear spacing to separate content groups.
 
 ### Don't:
 
-- **Don't** add an oversized marketing hero, decorative effects or animation spectacle.
-- **Don't** turn technology metadata into skill scores or decorative badges.
-- **Don't** replace open content rows with ornamental card elevation.
-- **Don't** use system display faces or glyph characters in place of the shipped serif headings and inline SVG controls.
+- **Don't** restore the rejected cream/green palette or serif technical-report direction.
+- **Don't** substitute stock imagery, fabricated screenshots, or simulated terminals for actual work.
+- **Don't** reduce substantial project demonstrations to tiny previews and text-only rows.
+- **Don't** add unsupported claims, proficiency scores, or generic marketing slogans.
+- **Don't** autoplay project demonstrations or force motion on reduced-motion users.

@@ -24,8 +24,8 @@ export function renderPage(requestPath: string) {
     skills: 'Programming languages, systems tools, graphics libraries, and research frameworks used by Cole Schwandt.',
     project: project?.summary ?? '', 'not-found': 'This page could not be found. Explore Cole Schwandt’s projects, experience, and technical background.',
   };
-  // Project bodies appear only on their detail page; list pages ship summaries, not hidden case studies.
-  const data: PageData = { ...content, projects: content.projects.map((p) => ({ ...p, html: '' })), kind, path, title, description: descriptions[kind], ...(project ? { project } : {}) };
+  // Showcase panels use the same authored implementation details as project pages.
+  const data: PageData = { ...content, kind, path, title, description: descriptions[kind], ...(project ? { project } : {}) };
   const canonical = kind === 'not-found' ? `${siteUrl}/404.html` : `${siteUrl}${path}`;
   const head = `<title>${escape(title)}</title>
 <meta name="description" content="${escape(data.description)}" />

@@ -20,8 +20,8 @@ export function ProjectMedia({project}: {project: Project}) {
   }
   function close() { dialog.current?.close(); }
   if (!project.images.length && !project.videos.length) return null;
-  return <section className="project-media" aria-labelledby="media-heading">
-    <h2 id="media-heading">Screenshots & demonstrations</h2>
+  return <section className="project-media" aria-labelledby={`media-heading-${project.slug}`}>
+    <h2 id={`media-heading-${project.slug}`}>Screenshots & demonstrations</h2>
     {!!project.images.length && <>
       <p className="section-note">Select a screenshot to view it at full size.</p>
       <div className="image-gallery">{project.images.map((image, index) => <figure key={image.src}>
@@ -35,9 +35,9 @@ export function ProjectMedia({project}: {project: Project}) {
       </dialog>
     </>}
     {!!project.videos.length && <div className="video-gallery">{project.videos.map((video, index) => <figure key={video.src}>
-      {!failedVideos[video.src] && <video controls preload="none" playsInline poster={localPoster ? imageAttributes(localPoster.src).src : video.poster} onError={() => videoFailed(video.src)} aria-labelledby={`video-caption-${index}`} width="1280" height="720"><source src={video.src} type="video/mp4" onError={() => videoFailed(video.src)} /><a href={video.src}>Open the video demonstration</a></video>}
+      {!failedVideos[video.src] && <video controls preload="none" playsInline poster={localPoster ? imageAttributes(localPoster.src).src : video.poster} onError={() => videoFailed(video.src)} aria-labelledby={`video-caption-${project.slug}-${index}`} width="1280" height="720"><source src={video.src} type="video/mp4" onError={() => videoFailed(video.src)} /><a href={video.src}>Open the video demonstration</a></video>}
       {failedVideos[video.src] && <p className="media-error" role="status">This demonstration could not be loaded. <a href={video.src}>Open the original video file</a> to try it directly.</p>}
-      <figcaption id={`video-caption-${index}`}>{video.caption} <a href={video.src}>Open video file</a></figcaption>
+      <figcaption id={`video-caption-${project.slug}-${index}`}>{video.caption} <a href={video.src}>Open video file</a></figcaption>
     </figure>)}</div>}
   </section>;
 }

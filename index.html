@@ -10,9 +10,9 @@
       try {
         var preference = localStorage.getItem('portfolio-theme');
         document.documentElement.dataset.theme = preference === 'light' || preference === 'dark'
-          ? preference : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          ? preference : preference === 'system' && !matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
       } catch (_) {
-        document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = 'dark';
       }
     </script>
   </head>

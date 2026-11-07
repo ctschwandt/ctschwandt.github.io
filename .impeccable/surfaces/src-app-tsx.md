@@ -2,27 +2,27 @@
 version: 1
 slug: "src-app-tsx"
 primary_target: "src/App.tsx"
-related_targets: ["src/styles/main.css","src/pages/About.tsx","src/pages/Projects.tsx"]
+related_targets: ["src/styles/main.css","src/styles/projects.css","src/pages/AboutPage.tsx","src/pages/ProjectsPage.tsx"]
 ---
 
-# Portfolio surface
+# Personal software showcase
 
-Scope: About, Projects, Experience, Skills and generated project-detail pages. Visitor mode: Read. Audience: technical recruiters scanning for relevance, engineers and researchers inspecting substantive work. Explicit owner brief pins scholarly typography, restraint, compact content and conventional wayfinding. Latest owner instruction authorizes complete implementation; deployment remains a separate approval.
+Scope: About, Projects, Experience, Skills, project details. Mode: Experience on About/Projects, Read on technical case studies. The owner explicitly rejects the previous cream/green technical report and pins the original Jekyll dark palette, portrait sidebar, substantial project cards, and large demonstrations. Existing code-first workflow remains confirmed. Implementation is authorized; publication is not.
 
 ## Direction contract
 
-THESIS: A computer scientist’s personal technical report: the work and its implementation lead, with aligned metadata and a calm reading column. The owner’s precise brief governs this world, with no decorative terminal or startup layout.
+THESIS: A personal software exhibition: a recognizable programmer’s profile beside substantial working-project demonstrations. The original faculty-site personality becomes a cohesive modern portfolio; the rejected text-row report is replaced in structure as well as color.
 
-OWN-WORLD: Neutral paper, charcoal ink and deep muted green links; Source Serif 4 headings, Source Sans 3 body, thin rules and consistent metadata alignment. Dark mode preserves the same hierarchy.
+OWN-WORLD: Original #22223B indigo ground, #4A4E69 dusty grape structure and #F2E9E4 warm text, developed into tonal dark panels with lavender #C7B9F3 interactions and almond #C9ADA7 secondary detail. Self-hosted Manrope headings and IBM Plex Sans reading text, framed portrait, confident media surfaces, concise technical chips, and native media controls. An optional coherent light variant is explicit; dark is the first-visit default.
 
-STORY: Establish Cole’s academic background and interests immediately, show selected projects, offer source and detail links, then give research, experience, personal context and setup their appropriate place.
+STORY: Meet Cole through his photograph and real academic profile. See an actual OpenGL maze, inspect its gallery and implementation details in place, explore interpreters/collision/research, then follow technical case studies or source. Personal faith, preaching, interests and dotfiles remain visible.
 
-FIRST VIEWPORT: Compact name/navigation header, a modest name heading and concise academic introduction beside a meaningful screenshot-led project feature. Selected technical work begins promptly, with full-page project routes one click away. On phones, intro precedes the feature and visible navigation wraps.
+FIRST VIEWPORT: A compact handle/navigation header spans the page. A sticky 224px portrait/profile column anchors the left. The right opens with a concise personal introduction and direct project links, immediately followed by a large screenshot/video stage beside implementation prose. On phones the profile becomes a compact horizontal panel above content; media takes the full column with accessible thumbnail selection.
 
-FORM: Departmental technical report, grounded candidate 5; seed:0a446e24fffba212. Local direction tool ran degraded after the permitted retry: no remote catalog challengers or quality boards available. User-pinned brief and explicit code-first choice govern. Signature interaction is a standard image enlargement dialog with original-file fallback, not decorative motion.
+FORM: Personal research software exhibition, grounded candidate 5; seed:d2cfabc9efd3ae4e. The explicit dark/profile/media brief governs all dimensions it pins. The concept tool ran degraded after the network-enabled retry, without remote challengers or quality cards. Signature interaction: screenshot/video switching within real project galleries, keyboard image enlargement, and restrained hover feedback. No simulated terminal or invented demo imagery.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-## Validation
+## Evidence and validation
 
-Real HTML for all routes; 13 Markdown projects, 5 jobs, all original project images and videos retained. Production build, TypeScript, content and route/link validation, no-JavaScript content, desktop/tablet/mobile layout, keyboard gallery, theme persistence and no-autoplay checks. No push or deployment in this task.
+Original visual evidence: commit 86654f93ecc573e16266e3a3aff137b48cfdb1f5, its soft_lavender theme, profile/sidebar, Projects HTML and media galleries; /workspace/redesign-review/current-desktop.png is the previous verified original render. Current React baseline is commit159baf4. Preserve all13 Markdown projects,11 original video URLs,8 screenshots,5jobs and all personal content. Keep static generation, routes, schema and deployment. Review desktop/mobile/tablet, native galleries and errors, dark/light accessibility, reduced motion and existing build/browser checks. No deployment or push.

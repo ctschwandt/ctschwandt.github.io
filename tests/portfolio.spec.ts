@@ -20,7 +20,7 @@ test('important routes retain substantive content and navigation without JavaScr
   const page = await context.newPage();
   try {
     for (const [route, heading, text] of [
-      ['/', 'Cole Schwandt', 'Columbia College'],
+      ['/', 'About me', 'Columbia College'],
       ['/projects/', 'Projects', 'MIPS Assembly Interpreter'],
       ['/projects/opengl-maze-fps/', 'OpenGL Maze FPS', 'Implementation'],
       ['/experience/', 'Experience', 'Missouri University of Science & Technology'],
@@ -124,11 +124,11 @@ test('video demonstrations use native controls and never preload or autoplay', a
   await expect(page.getByRole('status').getByRole('link')).toHaveAttribute('href', /^https:\/\/res\.cloudinary\.com\/.+\.mp4$/);
 });
 
-test('appearance honors system preferences and persists explicit light and dark choices', async ({ page }) => {
-  await page.emulateMedia({ colorScheme: 'dark' });
+test('appearance defaults to dark and persists explicit light, dark, and system choices', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' });
   await open(page, '/');
   const control = page.getByLabel('Appearance');
-  await expect(control).toHaveValue('system');
+  await expect(control).toHaveValue('dark');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await control.selectOption('light');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
@@ -144,9 +144,43 @@ test('appearance honors system preferences and persists explicit light and dark 
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await control.selectOption('system');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
-  expect(await page.evaluate(() => localStorage.getItem('portfolio-theme'))).toBeNull();
+  expect(await page.evaluate(() => localStorage.getItem('portfolio-theme'))).toBe('system');
+  await page.reload({ waitUntil: 'domcontentloaded' });
+  await expect(control).toHaveValue('system');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
   await page.emulateMedia({ colorScheme: 'dark' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+});
+
+test('project index galleries switch real screenshots and videos with keyboard controls', async ({ page }) => {
+  await open(page, '/projects/');
+  const project = page.locator('article#opengl-maze-fps');
+  const secondImage = project.getByRole('link', { name: /^Show screenshot 2:/ });
+  await secondImage.focus();
+  await page.keyboard.press('Enter');
+  await expect(secondImage).toHaveAttribute('aria-current', 'true');
+  await expect(project.locator('.project-stage-view img')).toHaveAttribute('src', /maze2\.webp$/);
+  const demonstration = project.getByRole('button', { name: /^Show video 1:/ });
+  await demonstration.focus();
+  await page.keyboard.press('Enter');
+  await expect(demonstration).toHaveAttribute('aria-pressed', 'true');
+  await expect(project.locator('video')).toHaveAttribute('controls', '');
+  await expect(project.locator('video')).toHaveAttribute('preload', 'none');
+  expect(await project.locator('video').getAttribute('autoplay')).toBeNull();
+  await secondImage.focus();
+  await page.keyboard.press('Enter');
+  const opener = project.locator('.project-stage-view a');
+  await opener.focus();
+  const stage = project.locator('.project-stage-view');
+  expect(await stage.evaluate(element => {
+    const style = getComputedStyle(element);
+    return style.outlineStyle !== 'none' && parseFloat(style.outlineWidth) >= 2;
+  }), 'Focused screenshot needs a visible frame ring that its own clipping cannot hide').toBe(true);
+  await page.keyboard.press('Enter');
+  await expect(project.getByRole('dialog')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(project.getByRole('dialog')).not.toBeVisible();
+  await expect(opener).toBeFocused();
 });
 
 test('principal layouts fit 320, 390, 768, and 1440 pixel viewports', async ({ page }) => {
@@ -163,6 +197,13 @@ test('principal layouts fit 320, 390, 768, and 1440 pixel viewports', async ({ p
       const navigation = page.getByRole('navigation', { name: 'Main navigation' });
       await expect(navigation).toBeVisible();
       for (const link of await navigation.getByRole('link').all()) await expect(link).toBeVisible();
+      if (route === '/' && width === 390) {
+        const feature = page.locator('.selected-work article#opengl-maze-fps');
+        const title = await feature.getByRole('heading', { name: 'OpenGL Maze FPS', exact: true }).boundingBox();
+        const media = await feature.locator('.project-stage-view').boundingBox();
+        expect(title && title.y + title.height < 844, 'The featured software identity must fit the initial phone viewport').toBe(true);
+        expect(media && media.y < 844 - 120, 'Show a recognizable part of the demonstration in the first phone viewport').toBe(true);
+      }
     }
   }
 });
